@@ -21,7 +21,6 @@ async function getJWKS(jwksUri) {
  * @returns 
  */
 async function verifyAccess(req, res, next) {
-  console.log(req);
 
   //Verifica se é publica, se for só passa
   if (await isPublicRoute(req.method, req.originalUrl) == true) {

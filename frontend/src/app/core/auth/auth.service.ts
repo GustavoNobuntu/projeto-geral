@@ -50,15 +50,27 @@ export class AuthService {
   }
 
   get accessToken(): string {
-    var sessionData = sessionStorage.getItem('oidc.user:https://'+environment.provider+'/'+environment.tenant_id+'/'+environment.signInPolitical+'/v2.0/:'+environment.client_id) ?? '';
-    const parsedData = JSON.parse(sessionData);
-    return parsedData?.access_token || '';
+
+    try {
+      var sessionData = sessionStorage.getItem('oidc.user:https://'+environment.provider+'/'+environment.tenant_id+'/'+environment.signInPolitical+'/v2.0/:'+environment.client_id) ?? '';
+      const parsedData = JSON.parse(sessionData);
+      return parsedData?.access_token || '';
+    } catch (e) {
+      return '';
+    }
+
   }
 
   get userUID(): string {
-    var sessionData = sessionStorage.getItem('oidc.user:https://'+environment.provider+'/'+environment.tenant_id+'/'+environment.signInPolitical+'/v2.0/:'+environment.client_id) ?? '';
-    const parsedData = JSON.parse(sessionData);
-    return parsedData?.profile.oid || '';
+
+    try {
+      var sessionData = sessionStorage.getItem('oidc.user:https://'+environment.provider+'/'+environment.tenant_id+'/'+environment.signInPolitical+'/v2.0/:'+environment.client_id) ?? '';
+      const parsedData = JSON.parse(sessionData);
+      return parsedData?.profile.oid || '';
+    } catch (e) {
+      return '';
+    }
+    
   }
 
   login(): void {

@@ -43,7 +43,7 @@ export class CallbackComponent implements OnInit {
           this.registerNewSession(returnedUser.id);
         },
         error: (_error) => {
-          console.log(_error);
+          // console.log(_error);
 
           this.userService.create(user).pipe(take(1)).subscribe({
             next: (newUser: User) => {
