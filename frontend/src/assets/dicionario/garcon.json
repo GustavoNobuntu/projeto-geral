@@ -1,0 +1,60 @@
+{
+    "config":{ 
+        "modified": "2024-03-28T05:29:26.004328Z", 
+        "description": "Garçon",  
+        "name": "Garcon", 
+        "apiUrl": "http://localhost:8080/api/garcon",
+        "route": "garcon",
+        "localStorage": true,
+        "filter": true, 
+        "searchable": true, 
+        "addNew": true, 
+        "edit": true, 
+        "columnsQuantity": 3,
+        "delete": true,
+        "isFormStepper": false,
+        "isLinearFormStepper": false
+    }, 
+    "attributes": [ 
+        { 
+            "name":"nomeGarcon", 
+            "type": "string", 
+            "mask": "Texto", 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+        },
+        { 
+            "name":"login", 
+            "type": "string", 
+            "mask": "Texto", 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+        },
+        { 
+            "name":"senha", 
+            "type": "string", 
+            "mask": "Texto", 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+        },
+        { 
+            "name":"comissao", 
+            "type": "string", 
+            "mask": "Texto", 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+        }
+    ] 
+}

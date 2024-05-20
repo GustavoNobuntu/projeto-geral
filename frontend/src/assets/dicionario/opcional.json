@@ -1,0 +1,115 @@
+{
+    "config":{ 
+        "modified": "2024-03-28T05:30:16.996982Z", 
+        "description": "Opcional",  
+        "name": "Opcional", 
+        "apiUrl": "http://localhost:8080/api/opcional",
+        "route": "opcional",
+        "localStorage": true,
+        "filter": true, 
+        "searchable": true, 
+        "addNew": true, 
+        "edit": true, 
+        "columnsQuantity": 3,
+        "delete": true,
+        "isFormStepper": false,
+        "isLinearFormStepper": false
+    }, 
+    "attributes": [ 
+        { 
+            "name":"nomeOpcional", 
+            "type": "string", 
+            "mask": "Texto", 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+        },
+        { 
+            "name":"tipoOpcional", 
+            "type": "string", 
+            "mask": "Texto", 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+        },
+        { 
+            "name":"maximaOpcionais", 
+            "type": "number", 
+            "mask": "Numero", 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+        },
+        { 
+            "name":"produto", 
+            "type": "", 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+        },
+        { 
+            "name":"categoria", 
+            "type": "foreignKey", 
+            "className": "Categoria", 
+            "many": false, 
+            "apiUrl": "http://localhost:8080/api/categoria",
+            "fieldDisplayedInLabel": "nomeCategoria",
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "forageinKey": "id", 
+            "lookup": true, 
+            "viewDetails": true, 
+        "searchable": true, 
+        "addNew": true, 
+            "properties": [ 
+                { 
+                    "type": "Texto", 
+                    "name": "nomeCategoria", 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+                },
+                { 
+                    "type": "Texto", 
+                    "name": "usaopcoesTamanho", 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+                },
+                { 
+                    "type": "Texto", 
+                    "name": "usaopcoesBorda", 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+                },
+                { 
+                    "type": "Texto", 
+                    "name": "setor", 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+                }
+            ] ,
+            "visibleForm": true 
+        }
+    ] 
+}

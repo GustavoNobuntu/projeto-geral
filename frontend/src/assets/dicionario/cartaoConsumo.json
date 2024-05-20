@@ -1,0 +1,68 @@
+{
+    "config": {
+        "modified": "2024-03-28T05:26:56.261304Z",
+        "description": "Cartão consumo",
+        "name": "CartaoConsumo",
+        "apiUrl": "api/cartaoConsumo",
+        "route": "cartaoConsumo",
+        "localStorage": true,
+        "filter": true,
+        "searchableFields": ["numeroCartao", "clientes"],
+        "addNew": true,
+        "edit": true,
+        "columnsQuantity": 3,
+        "delete": true,
+        "isFormStepper": false,
+        "isLinearFormStepper": false
+    },
+    "attributes": [
+        {
+            "name": "numeroCartao",
+            "type": "number",
+            "mask": "Numero",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "visibleForm": true
+        },
+        {
+            "name": "clientes",
+            "type": "foreignKey",
+            "className": "Cliente",
+            "many": false,
+            "apiUrl": "api/clientes",
+            "fieldDisplayedInLabel": "nome",
+            "visibleCard": true,
+            "visibleGrid": true,
+            "visibleFilter": true,
+            "visibleList": true,
+            "forageinKey": "id",
+            "lookup": true,
+            "viewDetails": true,
+            "searchable": ["nome"],
+            "addNew": true,
+            "properties": [
+                {
+                    "type": "string",
+                    "name": "nome",
+                    "visibleCard": true,
+                    "visibleGrid": true,
+                    "visibleFilter": true,
+                    "visibleList": true,
+                    "visibleForm": true
+                },
+                {
+                    "type": "number",
+                    "name": "telefone",
+                    "visibleCard": true,
+                    "visibleGrid": true,
+                    "visibleFilter": true,
+                    "visibleList": true,
+                    "visibleForm": true
+                }
+            ],
+            "visibleForm": true
+        }
+    ]
+}

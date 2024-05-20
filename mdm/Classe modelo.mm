@@ -1,0 +1,1070 @@
+<map version="1.0.1">
+<!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
+<node CREATED="1710747584437" ID="ID_104039135" MODIFIED="1710747600576" TEXT="Classe modelo">
+<node CREATED="1667256099424" ID="ID_1958025243" MODIFIED="1709579705362" POSITION="right" TEXT="domain">
+<icon BUILTIN="Package"/>
+<node CREATED="1697218113550" FOLDED="true" ID="ID_1274046490" MODIFIED="1710747775612" TEXT="Customers">
+<icon BUILTIN="Descriptor.bean"/>
+<node CREATED="1697218113550" ID="ID_1923224151" MODIFIED="1707313911232" TEXT="@">
+<node CREATED="1697218113550" ID="ID_1758768898" MODIFIED="1697222205680" TEXT="table">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" ID="ID_264467683" MODIFIED="1697218113550" TEXT="customers">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" ID="ID_336047978" MODIFIED="1697218113550" TEXT="id">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="id">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="type">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="Inteiro()">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" ID="ID_324897153" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="Customers">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" ID="ID_884734344" MODIFIED="1697218113550" TEXT="index">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="city">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="city">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="company">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="company">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="first_name">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="first_name">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="last_name">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="last_name">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="state_province">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="state_province">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="zip_postal_code">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="zip_postal_code">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+<node CREATED="1705690170467" ID="ID_1532650204" MODIFIED="1705953868990" TEXT="localStorage">
+<icon BUILTIN="element"/>
+<node CREATED="1705692603323" ID="ID_229501095" MODIFIED="1706206221571" TEXT="false">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_971761617" MODIFIED="1706296396743" TEXT="apiUrl">
+<icon BUILTIN="element"/>
+<node CREATED="1706295527405" ID="ID_15860840" MODIFIED="1707313264847" TEXT="api/customers">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_390739824" MODIFIED="1706820890913" TEXT="columnsQuantity">
+<icon BUILTIN="element"/>
+<node CREATED="1706295527405" ID="ID_725076729" MODIFIED="1706295708031" TEXT="3">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_133647268" MODIFIED="1707315412034" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_904952399" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1313811629" MODIFIED="1707313291876" TEXT="Clientes">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_1619049064" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_849138512" MODIFIED="1707313279581" TEXT="Customers">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1117977499" MODIFIED="1706296396743" TEXT="apiUrl">
+<icon BUILTIN="element"/>
+<node CREATED="1706295527405" ID="ID_405131945" MODIFIED="1710747766958" TEXT="api/customers">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" FOLDED="true" ID="ID_539139434" MODIFIED="1710747739376" TEXT="atributos">
+<icon BUILTIN="Descriptor.grouping"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="company: Texto(50)">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_984885892" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="company">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" ID="ID_1439404884" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="Company">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706824304200" ID="ID_869964680" MODIFIED="1706824323010" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706824338750" ID="ID_1431965838" MODIFIED="1706824363950" TEXT="pt">
+<icon BUILTIN="element"/>
+<node CREATED="1706824352556" ID="ID_738082374" MODIFIED="1706824366858" TEXT="Empresa">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706824374959" ID="ID_1040714527" MODIFIED="1706824383350" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706824352556" ID="ID_1993889440" MODIFIED="1707225938136" TEXT="Company">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="lastName: Texto(50)">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_524020393" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="last_name">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="Last Name">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1004430940" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_1509617282" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1321649625" MODIFIED="1707313756545" TEXT="Ultimo Nome">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_609389430" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_908995773" MODIFIED="1707313753035" TEXT="Last Name">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="firstName: Texto(50)">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_929847568" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="first_name">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="First Name">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1883195014" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_894883384" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1164823195" MODIFIED="1707313735141" TEXT="Primeiro Nome">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_1100208365" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_1025501430" MODIFIED="1707313729345" TEXT="First Name">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="emailAddress: Texto(50)">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_928639159" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="email_address">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="Email Address">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1323566128" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_943648722" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_743072217" MODIFIED="1707313723624" TEXT="Email">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_1329795249" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_813963727" MODIFIED="1707313720777" TEXT="Email Address">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="jobTitle: Texto(50)">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_782712962" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="job_title">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="Job Title">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_180514787" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_1022117680" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1288714154" MODIFIED="1707313710115" TEXT="Cargo">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_437190668" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_184259606" MODIFIED="1707313699670" TEXT="Job Title">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="businessPhone: Texto(25)">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_1108437145" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="business_phone">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="Business Phone">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_548699978" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_303606000" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_546348935" MODIFIED="1707313647735" TEXT="Telefone Comercial">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_1151586266" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_1907435128" MODIFIED="1707313625189" TEXT="Business Phone">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="homePhone: Texto(25)">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_683643211" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="home_phone">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="Home Phone">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_382826638" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_405373379" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1713609662" MODIFIED="1707313585985" TEXT="Telefone residencial ">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_1413655667" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_1524789284" MODIFIED="1707313575090" TEXT="Home Phone">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="mobilePhone: Texto(25)">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_1096237258" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="mobile_phone">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="Mobile Phone">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1091805178" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_1867899044" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1582887521" MODIFIED="1707313594570" TEXT="Celular">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_1565729722" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_1597876483" MODIFIED="1707313555825" TEXT="Mobile Phone">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="faxNumber: Texto(25)">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_1786742370" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="fax_number">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="Fax Number">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_304360569" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_652481942" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1895253241" MODIFIED="1707313544109" TEXT="Numero de Fax">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_1462788881" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_1463366862" MODIFIED="1707313529401" TEXT="Fax Number">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" ID="ID_1557715145" MODIFIED="1697218113550" TEXT="address: TextoLongo()">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_1957174659" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="address">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="Address">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1351416447" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_1216501808" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_52449364" MODIFIED="1707313524466" TEXT="Endere&#xe7;o">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_390222186" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_42819783" MODIFIED="1707313520618" TEXT="Adress">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="city: Texto(50)">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_1939840596" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="city">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="City">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1531876540" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_1568433693" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_177148402" MODIFIED="1707313516876" TEXT="Cidade">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_1683264650" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_1756450057" MODIFIED="1707313513469" TEXT="City">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" ID="ID_1234436820" MODIFIED="1697218113550" TEXT="stateProvince: Texto(50)">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_582747741" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="state_province">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="State Province">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1721787111" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_1173230200" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1138557082" MODIFIED="1707313497311" TEXT="Prov&#xed;ncia Estadual ">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_814700449" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_107437706" MODIFIED="1707313505005" TEXT="State Province">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="zipPostalCode: Texto(15)">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_1730414742" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="zip_postal_code">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="Zip Postal Code">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_963698064" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_963097572" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1934034929" MODIFIED="1707313457593" TEXT="C&#xf3;digo Postal ">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_1929409250" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_1676040855" MODIFIED="1707313439659" TEXT="Zip Postal Code">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="countryRegion: Texto(50)">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_1140622458" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="country_region">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="Country Region">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1613087458" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_471651669" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1000667351" MODIFIED="1707313394487" TEXT="Regi&#xe3;o do pa&#xed;s">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_488193966" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_838079467" MODIFIED="1707313380197" TEXT="Country Region">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="webPage: TextoLongo()">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_1901047794" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="web_page">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" ID="ID_1741479109" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="Web Page">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="notes: TextoLongo()">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_1738836090" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="notes">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="Notes">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1515645498" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_1706341911" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1690607838" MODIFIED="1707313358162" TEXT="Notas">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_723737755" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_152126779" MODIFIED="1707313343344" TEXT="Notes">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218113550" ID="ID_1202927831" MODIFIED="1697218113550" TEXT="attachments: Binary()">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218113550" ID="ID_157072679" MODIFIED="1697218113550" TEXT="@">
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="attachments">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218113550" MODIFIED="1697218113550" TEXT="Attachments">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_987577070" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_901709356" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_986119542" MODIFIED="1707313338766" TEXT="Anexos">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_2019900" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_86401470" MODIFIED="1707313351650" TEXT="Attachments">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218879394" FOLDED="true" ID="ID_1901861541" MODIFIED="1710747774460" TEXT="InventoryTransactions">
+<icon BUILTIN="Descriptor.bean"/>
+<node CREATED="1697218879394" ID="ID_1231329924" MODIFIED="1697218879394" TEXT="@">
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="table">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" ID="ID_1664171198" MODIFIED="1709210919897" TEXT="inventoryTransactions">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="id">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="id">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="type">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="Inteiro()">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="Inventory Transactions">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="index">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="customer_order_id">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="customer_order_id">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="customer_order_id_2">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="customer_order_id">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="product_id">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="product_id">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="product_id_2">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="product_id">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="purchase_order_id">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="purchase_order_id">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="purchase_order_id_2">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="purchase_order_id">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="transaction_type">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="transaction_type">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1880150717" MODIFIED="1706296396743" TEXT="apiUrl">
+<icon BUILTIN="element"/>
+<node CREATED="1706295527405" ID="ID_1645276238" MODIFIED="1707314542446" TEXT="api/inventoryTransactions">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_940024033" MODIFIED="1706820890913" TEXT="columnsQuantity">
+<icon BUILTIN="element"/>
+<node CREATED="1706295527405" ID="ID_1835807581" MODIFIED="1706295708031" TEXT="3">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1981645740" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_1415413582" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1040862573" MODIFIED="1707314559016" TEXT=" Transa&#xe7;&#xf5;es de invent&#xe1;rio">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_1764116583" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_515157845" MODIFIED="1707314567529" TEXT="Inventory Transactions">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="atributos">
+<icon BUILTIN="Descriptor.grouping"/>
+<node CREATED="1697218879394" ID="ID_1466247305" MODIFIED="1707314958972" TEXT="transactionType: InventoryTransactionTypes()">
+<icon BUILTIN="Mapping.oneToOne"/>
+<node CREATED="1697218879394" ID="ID_1488173732" MODIFIED="1697218879394" TEXT="@">
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" ID="ID_778120515" MODIFIED="1709210290234" TEXT="transactionType">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="required">
+<icon BUILTIN="element"/>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="Transaction Type">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_433832493" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_1438323886" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1677591197" MODIFIED="1707314678234" TEXT="Tipos de Transa&#xe7;&#xf5;es">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_979112366" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_264188265" MODIFIED="1707314691565" TEXT="Transaction Type">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1187782447" MODIFIED="1706296396743" TEXT="apiUrl">
+<icon BUILTIN="element"/>
+<node CREATED="1706295527405" ID="ID_1402068950" MODIFIED="1709210347004" TEXT="api/inventoryTransactionTypes">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1709151883878" ID="ID_601676158" MODIFIED="1709155488903" TEXT="fieldDisplayedInLabel">
+<icon BUILTIN="element"/>
+<node CREATED="1709151888612" ID="ID_541909320" MODIFIED="1709210352026" TEXT="typeName">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218879394" ID="ID_1582633325" MODIFIED="1697218879394" TEXT="transactionCreatedDate: DateTime()">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218879394" ID="ID_417032469" MODIFIED="1707314639552" TEXT="@">
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="transaction_created_date">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="Transaction Created Date">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_622392981" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_1141842776" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1821335578" MODIFIED="1707314719207" TEXT="Data de cria&#xe7;&#xe3;o da transa&#xe7;&#xe3;o">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_501517040" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_288231519" MODIFIED="1707314707090" TEXT="Transaction Created Date">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218879394" ID="ID_1351234062" MODIFIED="1697218879394" TEXT="transactionModifiedDate: DateTime()">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218879394" ID="ID_1711447055" MODIFIED="1697218879394" TEXT="@">
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="transaction_modified_date">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="Transaction Modified Date">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1735375625" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_1249366398" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_773836709" MODIFIED="1707314740914" TEXT=" Data de modifica&#xe7;&#xe3;o da transa&#xe7;&#xe3;o">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_1394351071" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_103897277" MODIFIED="1707314744499" TEXT="Transaction Modified Date">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218879394" ID="ID_22886028" MODIFIED="1707314952670" TEXT="product: Products()">
+<icon BUILTIN="Mapping.oneToOne"/>
+<node CREATED="1697218879394" ID="ID_399887526" MODIFIED="1697218879394" TEXT="@">
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="product_id">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="required">
+<icon BUILTIN="element"/>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="Product">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1071245456" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_404607859" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_784812798" MODIFIED="1707314755014" TEXT="Produto">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_1498169818" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_360522034" MODIFIED="1707314757231" TEXT="Product">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_184746741" MODIFIED="1706296396743" TEXT="apiUrl">
+<icon BUILTIN="element"/>
+<node CREATED="1706295527405" ID="ID_1436731208" MODIFIED="1709210385917" TEXT="api/products">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1709151883878" ID="ID_1819934403" MODIFIED="1709155488903" TEXT="fieldDisplayedInLabel">
+<icon BUILTIN="element"/>
+<node CREATED="1709151888612" ID="ID_1100603424" MODIFIED="1709210405341" TEXT="productName">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218879394" ID="ID_1219791738" MODIFIED="1709210930671" TEXT="quantity: Inteiro()">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218879394" ID="ID_302393049" MODIFIED="1697218879394" TEXT="@">
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="quantity">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="required">
+<icon BUILTIN="element"/>
+</node>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="Quantity">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1207688765" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_249542540" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1974020172" MODIFIED="1707314761334" TEXT="Quantidade">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_1584530318" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_51671855" MODIFIED="1707314764036" TEXT="Quantity">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218879394" ID="ID_775700151" MODIFIED="1707314948781" TEXT="purchaseOrder: PurchaseOrders()">
+<icon BUILTIN="Mapping.oneToOne"/>
+<node CREATED="1697218879394" ID="ID_154251214" MODIFIED="1697218879394" TEXT="@">
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879394" MODIFIED="1697218879394" TEXT="purchase_order_id">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879395" MODIFIED="1697218879395" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879395" MODIFIED="1697218879395" TEXT="Purchase Order">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_355704079" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_147501083" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1197087549" MODIFIED="1707314777960" TEXT="Ordem de Compra ">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_1967899701" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_1293772859" MODIFIED="1707314784649" TEXT="Purchase Order">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_479526876" MODIFIED="1706296396743" TEXT="apiUrl">
+<icon BUILTIN="element"/>
+<node CREATED="1706295527405" ID="ID_782734506" MODIFIED="1709210444306" TEXT="api/purchaseOrders">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1709151883878" ID="ID_269256988" MODIFIED="1709155488903" TEXT="fieldDisplayedInLabel">
+<icon BUILTIN="element"/>
+<node CREATED="1709151888612" ID="ID_610149649" MODIFIED="1709210478596" TEXT="notes">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218879395" ID="ID_1005568721" MODIFIED="1707314944986" TEXT="customerOrder: Orders()">
+<icon BUILTIN="Mapping.oneToOne"/>
+<node CREATED="1697218879395" ID="ID_537401096" MODIFIED="1709210497028" TEXT="@">
+<node CREATED="1697218879395" MODIFIED="1697218879395" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879395" MODIFIED="1697218879395" TEXT="customer_order_id">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879395" MODIFIED="1697218879395" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879395" MODIFIED="1697218879395" TEXT="Customer Order">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1104922495" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_1100411235" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_119312600" MODIFIED="1707314846320" TEXT="Pedido do Cliente">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_564211099" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_1007564981" MODIFIED="1707314853575" TEXT="Customer Order">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_508518967" MODIFIED="1706296396743" TEXT="apiUrl">
+<icon BUILTIN="element"/>
+<node CREATED="1706295527405" ID="ID_315019197" MODIFIED="1709210501797" TEXT="api/orders">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1709151883878" ID="ID_1580983633" MODIFIED="1709155488903" TEXT="fieldDisplayedInLabel">
+<icon BUILTIN="element"/>
+<node CREATED="1709151888612" ID="ID_725204194" MODIFIED="1709210478596" TEXT="notes">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1697218879395" MODIFIED="1697218879395" TEXT="comments: Texto(255)">
+<icon BUILTIN="Mapping.directToField"/>
+<node CREATED="1697218879395" ID="ID_1749595558" MODIFIED="1697218879395" TEXT="@">
+<node CREATED="1697218879395" MODIFIED="1697218879395" TEXT="column">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879395" MODIFIED="1697218879395" TEXT="comments">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1697218879395" MODIFIED="1697218879395" TEXT="description">
+<icon BUILTIN="element"/>
+<node CREATED="1697218879395" MODIFIED="1697218879395" TEXT="Comments">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706295519298" ID="ID_1043035523" MODIFIED="1707312385864" TEXT="title">
+<icon BUILTIN="element"/>
+<node CREATED="1706820876328" ID="ID_179987160" MODIFIED="1706820900290" TEXT="pt-br">
+<icon BUILTIN="element"/>
+<node CREATED="1706820883364" ID="ID_1133170697" MODIFIED="1707314924430" TEXT="Comentarios">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+<node CREATED="1706820892228" ID="ID_1708807652" MODIFIED="1706820900290" TEXT="en">
+<icon BUILTIN="element"/>
+<node CREATED="1706820894485" ID="ID_1578677368" MODIFIED="1707314929035" TEXT="Comments">
+<icon BUILTIN="tag_green"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</map>

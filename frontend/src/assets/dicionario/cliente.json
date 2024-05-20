@@ -1,0 +1,40 @@
+{
+    "config":{ 
+        "modified": "2024-03-28T05:27:19.704158Z", 
+        "description": "Clientes",  
+        "name": "Cliente", 
+        "apiUrl": "api/clientes",
+        "route": "cliente",
+        "localStorage": true,
+        "filter": true, 
+        "searchableFields": ["nome", "telefone"], 
+        "addNew": true, 
+        "edit": true, 
+        "columnsQuantity": 3,
+        "delete": true,
+        "isFormStepper": false,
+        "isLinearFormStepper": false
+    }, 
+    "attributes": [ 
+        { 
+            "name":"nome", 
+            "type": "string", 
+            "mask": "Texto", 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+        },
+        { 
+            "name":"telefone", 
+            "type": "number", 
+            "mask": "Numero", 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+        }
+    ] 
+}

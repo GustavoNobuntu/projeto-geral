@@ -1,0 +1,7 @@
+Para gerar seu projeto é preciso que primeiro voce siga a classe modelo do arquivo "mdm.mm" e faça sua modelagem, após isso, siga o passo a passo a seguir:
+salve o arquivo "mdm.mm" e abra o terminal na pasta onde o arquivo se encontra e execute o comando:
+```mi init <nome_do_seu_app> mdm.mm```
+A seguir, execute o comando:
+```mi generate <nome_do_seu_app> mean bashGenerateAll > geraFontes.sh```
+Após isso, execute o comando:
+```chmod +x geraFontes.sh```

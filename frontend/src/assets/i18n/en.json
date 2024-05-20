@@ -1,0 +1,116 @@
+{
+"CartaoConsumo": {
+        "CartaoConsumo": "consumption card",
+        "numeroCartao": "Card number",
+        "clientes": "Client"
+    },
+"Cliente": {
+        "cliente": "Clients",
+        "nome": "Client name",
+        "telefone": "Phone client"
+    },
+"CadastroCliente": {
+        "CadastroCliente": "Client Register",
+        "nomeCliente": "Client name",
+        "sobrenomeCliente": "Cliente  last name",
+        "emailCliente": "Client Email",
+        "emailclienteConfirma": "Client Email Confirm",
+        "senhaCliente": "Password client",
+        "senhaclienteConfirma": "Client Password Confirm"
+    },
+"CartaoCliente": {
+        "CartaoCliente": "Client Card",
+        "numeroCartao": "card number",
+        "nomeImpresso": "printed name",
+        "anoValidade": "validity year",
+        "mesValidade": "month validity",
+        "diaValidade": "validity day",
+        "cvv": "CVV",
+        "pedidoCartao": "card request",
+        "cpfcnpj": "CPFCNPJ",
+        "tipoPagamento": "Payment Type ID"
+    },
+"Categoria": {
+        "Categoria": "Category",
+        "nomeCategoria": "Category Name",
+        "usaopcoesTamanho": "Use Size Options",
+        "usaopcoesBorda": "Use Edge Options",
+        "setor": "Sector"
+    },
+"Cozinha": {
+        "Cozinha": "Kitchen",
+        "nomePedido": "Order name",
+        "dataHora": "date and time",
+        "statusPedido": "order status",
+        "itemPedido": "ID Items Ordered"
+    },
+"Endereco": {
+        "Endereco": "Address",
+        "rua": "Road",
+        "bairro": "Neighborhood",
+        "cidade": "City",
+        "numeroMoradia": "House Number",
+        "cep": "CEP",
+        "complemento": "Complement",
+        "cadastroCliente": "Client Registration ID"
+    },
+"Garcon": {
+        "Garcon": "Garcon",
+        "nomeGarcon": "Name Garcon",
+        "login": "Login Garcon",
+        "senha": "Password Garcon",
+        "comissao": "Commission"
+    },
+"ItemPedido": {
+        "ItemPedido": "Order Item",
+        "nomePedido": "Name order",
+        "descricao": "Description",
+        "quantidadePedido": "Order Quantity",
+        "precoPedido": "Order price",
+        "numeroMesa": "Table number"
+    },
+"Menu": {
+        "Menu": "Menu",
+        "nomeMenu": "Name menu",
+        "descricaoMenu": "Description menu",
+        "preco": "Price",
+        "produto": "ID Product"
+    },
+"Opcional": {
+        "Opcional": "Optional",
+        "nomeOpcional": "Name optional ",
+        "tipoOpcional": "Type optional",
+        "maximaOpcionais": "Maximum options",
+        "produto": "ID Product",
+        "categoria": "ID Category"
+    },
+"Pagamento": {
+        "Pagamento": "Payment",
+        "valorPagamento": "Payment amount",
+        "datahoraPagamento": "Payment date and time",
+        "tipoPagamento": "Payment Type ID"
+    },
+"Pedido": {
+        "Pedido": "Order",
+        "pedidoCancelado": "Client name",
+        "datahoraPedido": "Phone client",
+        "pagamento": "Payment  ID",
+        "garcon": "ID Garcon",
+        "itemPedido": "ID Items Ordered",
+        "cartaoConsumo": "ID Card"
+    },
+"Produto": {
+        "Produto": "Product",
+        "nomeProduto": "Name Product ",
+        "codigo": "Phone client",
+        "descricaoProduto": "Phone client",
+        "precoProduto": "Phone client",
+        "imagem": "Phone client",
+        "categoria": "ID Category",
+        "opcional": "ID Optional "
+    },
+"TipoPagamento": {
+        "TipoPagamento": "Payment Type",
+        "tipoPagamento": "Payment Type"
+    }
+}

@@ -1,0 +1,116 @@
+{
+"CartaoConsumo": {
+        "CartaoConsumo": "Cartao Consumo",
+        "numeroCartao": "Número do cartão",
+        "clientes": "Cliente"
+    },
+"Cliente": {
+        "cliente": "Clientes",
+        "nome": "Nome do cliente",
+        "telefone": "Telefone do cliente"
+    },
+"CadastroCliente": {
+        "CadastroCliente": "Cadastro do cliente",
+        "nomeCliente": "Nome do cliente",
+        "sobrenomeCliente": "Sobrenome do cliente",
+        "emailCliente": "Email do Cliente",
+        "emailclienteConfirma": "Email do Cliente Confirma",
+        "senhaCliente": "Senha do Cliente",
+        "senhaclienteConfirma": "Senha do Cliente Confirma"
+    },
+"CartaoCliente": {
+        "CartaoCliente": "Cartão Cliente",
+        "numeroCartao": "Nome do cartão",
+        "nomeImpresso": " Nome Impresso",
+        "anoValidade": " Ano Validade",
+        "mesValidade": "Mes Validade",
+        "diaValidade": "Dia Validade",
+        "cvv": "CVV",
+        "pedidoCartao": "Pedido cartão",
+        "cpfcnpj": "CPFCNPJ",
+        "tipoPagamento": "ID Tipo Pagamento"
+    },
+"Categoria": {
+        "Categoria": "Categoria",
+        "nomeCategoria": "Nome da categoria",
+        "usaopcoesTamanho": "Usar Opções Tamanho",
+        "usaopcoesBorda": "Usar Opções Borda",
+        "setor": "Setor"
+    },
+"Cozinha": {
+        "Cozinha": "Cozinha",
+        "nomePedido": "Nome do pedido",
+        "dataHora": "Data e Hora",
+        "statusPedido": "Status do Pedido",
+        "itemPedido": "ID Itens Pedidos"
+    },
+"Endereco": {
+        "Endereco": "Endereco",
+        "rua": "Rua",
+        "bairro": "Bairro",
+        "cidade": "Cidade",
+        "numeroMoradia": "Numero da Moradia",
+        "cep": "CEP",
+        "complemento": "Complemento",
+        "cadastroCliente": "ID Cadastro Cliente"
+    },
+"Garcon": {
+        "Garcon": "Garçon",
+        "nomeGarcon": "Nome do garçon",
+        "login": "Login do Garçon",
+        "senha": "Senha do garçon",
+        "comissao": "Comissão"
+    },
+"ItemPedido": {
+        "ItemPedido": "Item Pedido",
+        "nomePedido": "Nome do pedido",
+        "descricao": "Descrição",
+        "quantidadePedido": "Quantidade de pedido",
+        "precoPedido": "Preço do pedido",
+        "numeroMesa": "Numero da mesa"
+    },
+"Menu": {
+        "Menu": "Menu",
+        "nomeMenu": "Nome do menu",
+        "descricaoMenu": "Descrição de menu",
+        "preco": " Preço",
+        "produto": "ID de Produto"
+    },
+"Opcional": {
+        "Opcional": "Opcional",
+        "nomeOpcional": "Nome do opcional",
+        "tipoOpcional": "Tipo do opcional",
+        "maximaOpcionais": "Maxima de opcionais",
+        "produto": " ID Produto",
+        "categoria": "ID Categoria"
+    },
+"Pagamento": {
+        "Pagamento": "Pagamento",
+        "valorPagamento": "Valor do pagamento",
+        "datahoraPagamento": "Data e hora de pagamento",
+        "tipoPagamento": "ID Tipo Pagamento"
+    },
+"Pedido": {
+        "Pedido": "Pedido",
+        "pedidoCancelado": " Pedido Cancelado",
+        "datahoraPedido": "Data e hora de pedido",
+        "pagamento": "ID Pagamento",
+        "garcon": "ID Garçon",
+        "itemPedido": "ID Itens Pedidos",
+        "cartaoConsumo": " ID Cartao"
+    },
+"Produto": {
+        "Produto": "Produto",
+        "nomeProduto": "Nome do Produto",
+        "codigo": "Código",
+        "descricaoProduto": "Descrição dos produtos",
+        "precoProduto": "Preço do Produto",
+        "imagem": "Imagem",
+        "categoria": "ID Categoria",
+        "opcional": "ID Opcional"
+    },
+"TipoPagamento": {
+        "TipoPagamento": "Tipo Pagamento",
+        "tipoPagamento": "Tipo Pagamento"
+    }
+}

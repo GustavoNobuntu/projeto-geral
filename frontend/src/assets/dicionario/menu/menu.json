@@ -1,0 +1,99 @@
+{
+    "config":{ 
+        "modified": "2024-03-28T05:32:29.666353Z", 
+        "name": "Menu Principal", 
+        "type": "sandwich"
+    }, 
+    "itens": [ 
+        { 
+            "name": "CartaoConsumo",
+            "apiUrl": "/cartaoConsumo",
+            "routeUrl": "cartaoConsumo", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "Cliente", 
+            "apiUrl":"/clientes",
+            "routeUrl": "cliente", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "CadastroCliente",
+            "apiUrl": "/cadastroCliente",
+            "routeUrl": "cadastroCliente", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "CartaoCliente",
+            "apiUrl": "/cartaoCliente",
+            "routeUrl": "cartaoCliente", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "Categoria",
+            "apiUrl": "/categoria",
+            "routeUrl": "categoria", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "Cozinha",
+            "apiUrl": "/cozinha",
+            "routeUrl": "cozinha", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "Endereco",
+            "apiUrl": "/endereco", 
+            "routeUrl": "endereco", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "Garcon",
+            "apiUrl": "/garcon",
+            "routeUrl": "garcon", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "ItemPedido",
+            "apiUrl": "/itemPedido",
+            "routeUrl": "itemPedido", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "Menu",
+            "apiUrl": "/menu",
+            "routeUrl": "menu", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "Opcional",
+            "apiUrl": "/opcional", 
+            "routeUrl": "opcional", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "Pagamento",
+            "apiUrl": "/pagamento", 
+            "routeUrl": "pagamento", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "Pedido", 
+            "apiUrl": "/pedido",
+            "routeUrl": "pedido", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "Produto",
+            "apiUrl": "/produto", 
+            "routeUrl": "produto", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "TipoPagamento",
+            "apiUrl": "/tipoPagamento", 
+            "routeUrl": "tipoPagamento", 
+            "icon": "feather:box"
+        }
+    ] 
+}
