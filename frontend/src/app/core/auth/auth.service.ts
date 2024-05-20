@@ -29,8 +29,8 @@ export class AuthService {
     const settings: UserManagerSettings = {
       authority: environment.authority,
       client_id: environment.client_id,
-      redirect_uri: environment.redirect_uri,
-      post_logout_redirect_uri: environment.post_logout_redirect_uri,
+      redirect_uri: environment.frontEndUrl + '/' + environment.redirect_uri,
+      post_logout_redirect_uri: environment.frontEndUrl + '/' + environment.post_logout_redirect_uri,
       response_type: 'code',
       scope: environment.scope,
       

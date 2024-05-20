@@ -2,15 +2,15 @@ export const environment = {
     applicationTitle: 'NadirDigital',
 
     backendUrl: "http://localhost:8080",
-    frontEndUrl: "http://localhost:4200",
+    frontEndUrl: "https://localhost:4200",
     
     menuPath: "assets/dicionario/menu/menu.json",
 
     // Dados Relacionados ao Azure AD B2C
     authority: 'https://allystore.b2clogin.com/b46b5b87-a08e-487b-ae9b-fec172a9a90b/b2c_1_entradaEcadastro/v2.0/',
     client_id:'46513151-51f8-4912-8051-8de83c3ef9ed', //app-jef
-    redirect_uri: 'https://localhost:4200/callback',//app-jef
-    post_logout_redirect_uri: 'https://localhost:4200/',//app-jef
+    redirect_uri: 'callback',//app-jef
+    post_logout_redirect_uri: 'logout',//app-jef
     scope: 'https://allystore.onmicrosoft.com/46513151-51f8-4912-8051-8de83c3ef9ed/test.read openid',//app-jef
 
     tenant_id: 'b46b5b87-a08e-487b-ae9b-fec172a9a90b',

@@ -9,8 +9,8 @@ export const environment = {
     // Dados Relacionados ao Azure AD B2C
     authority: 'https://allystore.b2clogin.com/b46b5b87-a08e-487b-ae9b-fec172a9a90b/b2c_1_entradaEcadastro/v2.0/',//app-jef
     client_id:'aa90beb3-3aca-45aa-991a-e70d3ee59708', //app-jef-cloud
-    redirect_uri: 'https://teste-pizzaria-spa-oe4uwswcda-rj.a.run.app/callback',//app-jef-cloud
-    post_logout_redirect_uri: 'https://teste-pizzaria-spa-oe4uwswcda-rj.a.run.app/logout',//app-jef-cloud
+    redirect_uri: 'callback',//app-jef-cloud
+    post_logout_redirect_uri: 'logout',//app-jef-cloud
     scope: 'https://allystore.onmicrosoft.com/aa90beb3-3aca-45aa-991a-e70d3ee59708/test.read openid',//app-jef-cloud
 
     tenant_id: 'b46b5b87-a08e-487b-ae9b-fec172a9a90b',
