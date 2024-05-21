@@ -84,5 +84,5 @@ app.listen(PORT, () => {
   console.log(`Horário atual: ${currentTime}`);
   console.log(`Fuso horário: ${timezone} (UTC${currentTimeZone})`);
 
-  registerRoutes.saveFunctionsSystem();
+  // registerRoutes.saveFunctionsSystem();
 });
