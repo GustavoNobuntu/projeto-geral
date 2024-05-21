@@ -1,7 +1,7 @@
 export const environment = {
     applicationTitle: 'NadirDigital',
 
-    backendUrl: "https://projeto-geral-api-oe4uwswcda-uc.a.run.app",
+    backendUrl: "https://projeto-geral-api-oe4uwswcda-rj.a.run.app",
     frontEndUrl: "https://projeto-geral-spa-oe4uwswcda-rj.a.run.app",
         
     menuPath: "assets/dicionario/menu/menu.json",
