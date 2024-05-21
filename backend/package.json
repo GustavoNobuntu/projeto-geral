@@ -19,6 +19,7 @@
     "fs-extra": "^11.2.0",
     "jsonwebtoken": "^9.0.2",
     "jwk-to-pem": "^2.0.5",
+    "moment-timezone": "^0.5.45",
     "mongoose": "^8.2.3",
     "path": "^0.12.7"
   },

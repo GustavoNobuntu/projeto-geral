@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 require('dotenv').config();//adicionado
+const moment = require('moment-timezone');
 
 var corsOptions = {
   origin: "*"
@@ -70,10 +71,18 @@ require("./routes/user.routes")(app);
 
 require("./routes/session.routes")(app);
 
+// Obtém a hora atual e o fuso horário da máquina
+const now = moment();
+const timezone = moment.tz.guess();
+const currentTime = now.tz(timezone).format('YYYY-MM-DD HH:mm:ss');
+const currentTimeZone = now.tz(timezone).format('Z');
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
+  console.log(`Horário atual: ${currentTime}`);
+  console.log(`Fuso horário: ${timezone} (UTC${currentTimeZone})`);
 
-  // registerRoutes.saveFunctionsSystem();
+  registerRoutes.saveFunctionsSystem();
 });
