@@ -25,7 +25,7 @@ export class AuthService {
     private _httpClient: HttpClient,
     private sessionService: SessionService,
   ) {
-    
+
     const settings: UserManagerSettings = {
       authority: environment.authority,
       client_id: environment.client_id,

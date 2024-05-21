@@ -35,6 +35,8 @@ export class CallbackComponent implements OnInit {
       username: this.authService.getUser.name,
     }
 
+    console.log("link do callback: ",environment.frontEndUrl + '/' + environment.redirect_uri)
+
     try {
       //Verificar se usuário está registrado na aplicação
       this.userService.getByUID(this.authService.userUID).pipe(take(1)).subscribe({
