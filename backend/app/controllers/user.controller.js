@@ -86,20 +86,6 @@ exports.create = async (req, res) => {
     });
 };
 
-async function checkExistAnyUserAccount(){
-  await User.find().then(data => {
-    console.log("Dado reornado ao verificar se tem usuário: ",data);
-    if(data.length == 0){
-      return false;
-    } 
-
-    return true;
-    
-  }).catch(err => {
-    return Error("Erro ao verificar se tem algum usuário registrado na aplicação")
-  });
-}
-
 // Procura por todas as entidades do tipo User
 exports.findAll = (req, res) => {
   var condition = {};
@@ -158,7 +144,7 @@ exports.findOneByUID = (req, res) => {
     if (!data) {
       res.status(404).send({ message: "Não foi encontrado User com o uid " + UID });
     } else {
-      res.send(data);
+      res.status(200).send(data);
     }
   }).catch(err => {
     res.status(500).send({ message: "Erro ao buscar User com o uid=" + UID });

@@ -35,25 +35,21 @@ export class CallbackComponent implements OnInit {
       username: this.authService.getUser.name,
     }
 
-    console.log("link do callback: ",environment.frontEndUrl + '/' + environment.redirect_uri)
-
     try {
       //Verificar se usuário está registrado na aplicação
       this.userService.getByUID(this.authService.userUID).pipe(take(1)).subscribe({
         next: (returnedUser: User) => {
-          console.log("Usuário encontrado no banco de dados da aplicação: ", returnedUser);
           this.registerNewSession(returnedUser.id);
         },
         error: (_error) => {
-          // console.log(_error);
 
           this.userService.create(user).pipe(take(1)).subscribe({
             next: (newUser: User) => {
-              console.log("Usuário criado com sucesso!");
               this.registerNewSession(newUser.id);
             },
             error: (error) => {
-              console.warn("Erro ao criar o usuário ", error);
+              // console.warn("Erro ao criar o usuário ", error);
+              this.redirectToErrorPage();
             }
           })
         }

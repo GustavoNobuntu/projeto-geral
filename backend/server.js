@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-require('dotenv').config();//adicionado
+require('dotenv').config();
 const moment = require('moment-timezone');
 
 var corsOptions = {
@@ -84,5 +84,5 @@ app.listen(PORT, () => {
   console.log(`Horário atual: ${currentTime}`);
   console.log(`Fuso horário: ${timezone} (UTC${currentTimeZone})`);
 
-  // registerRoutes.saveFunctionsSystem();
+  registerRoutes.saveFunctionsSystem();
 });

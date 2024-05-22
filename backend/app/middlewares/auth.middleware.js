@@ -29,7 +29,9 @@ async function verifyAccess(req, res, next) {
   }
 
   //Obtem o access_token do header
-  const access_token = req.headers["authorization"];
+  const authHeader = req.headers['authorization'];
+
+  const access_token = authHeader.split(' ')[1]; // Obtém o token após "Bearer"
 
   //Verifica se o token é valido, assim retorna o OID do usuário
   const userOID = await verifyAccessTokenIsValid(access_token, res);
