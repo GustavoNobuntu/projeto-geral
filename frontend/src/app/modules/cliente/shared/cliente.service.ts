@@ -12,7 +12,7 @@ export class ClienteService extends BaseResourceService<Cliente> {
   protected http: HttpClient 
 
   constructor(protected override injector: Injector) { 
-    var url = environment.backendUrl+"/api/clientes"; 
+    var url = environment.backendUrl+"/api/cliente"; 
 
     super(url, injector, Cliente.fromJson) 
   } 

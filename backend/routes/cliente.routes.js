@@ -20,5 +20,5 @@ module.exports = app => {
     // Create a new Cliente 
     router.delete("/", clientes.deleteAll);
     router.post("/custom", clientes.findCustom);
-    app.use('/api/clientes', router); 
+    app.use('/api/cliente', router); 
   }; 

@@ -3,7 +3,7 @@
         "modified": "2024-03-28T05:27:19.704158Z", 
         "description": "Clientes",  
         "name": "Cliente", 
-        "apiUrl": "api/clientes",
+        "apiUrl": "api/cliente",
         "route": "cliente",
         "localStorage": true,
         "filter": true, 
