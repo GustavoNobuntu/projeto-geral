@@ -6,23 +6,32 @@ import { UserService } from 'app/core/auth/user.service';
 import { environment } from 'environments/environment';
 import { take } from 'rxjs';
 
+enum CallbackPageState {
+  Redirecting,
+  Error,
+}
+
 @Component({
   selector: 'app-callback',
   templateUrl: './callback.component.html',
   styleUrls: ['./callback.component.scss']
 })
 export class CallbackComponent implements OnInit {
+  pageState : CallbackPageState;
 
   constructor(
     private authService: AuthService,
     private router: Router,
     private userService: UserService,
   ) {
-
+    this.pageState = CallbackPageState.Redirecting;
   }
 
   async ngOnInit(): Promise<void> {
-    await this.authService.completeAuthentication();
+    await this.authService.completeAuthentication().catch((returnedValue)=>{
+      this.pageState = CallbackPageState.Error;
+      console.log(returnedValue);
+    });
 
     const user: User = {
       firstName: this.authService.getUser.name,
@@ -41,6 +50,7 @@ export class CallbackComponent implements OnInit {
         next: (returnedUser: User) => {
           this.registerNewSession(returnedUser.id);
         },
+
         error: (_error) => {
 
           this.userService.create(user).pipe(take(1)).subscribe({
@@ -51,7 +61,8 @@ export class CallbackComponent implements OnInit {
               // console.warn("Erro ao criar o usuário ", error);
               this.redirectToErrorPage();
             }
-          })
+          });
+
         }
       });
 

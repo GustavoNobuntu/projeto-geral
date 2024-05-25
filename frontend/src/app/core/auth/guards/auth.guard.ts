@@ -50,7 +50,7 @@ export class AuthGuard implements CanMatch {
 
       switchMap((authenticated) => {
 
-        console.log("Usuário com permisão para rota? ", authenticated);
+        // console.log("Usuário com permisão para rota? ", authenticated);
         // Se o usuário não estiver autenticado
         if (!authenticated) {
 

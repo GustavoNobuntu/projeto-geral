@@ -109,6 +109,17 @@ export class ForeignKeyInputFieldComponent implements OnDestroy, AfterViewInit {
    * @param valueDisplayed Valores que são apresentados no campo de inserção do componente atual
    */
   setDisplayedValue(inputValue: FormControl, valueDisplayed: string) {
+    var searchableProperty: string;
+    console.log(inputValue.value);
+    const hasProperty = inputValue.value.some(obj => obj.hasOwnProperty(valueDisplayed) == true);
+
+    if (hasProperty == true) {
+      searchableProperty = this.fieldDisplayedInLabel;
+    } else {
+      searchableProperty = this.getFirstNonIdKey(inputValue.value[0]);
+      console.log(this.getFirstNonIdKey(inputValue.value[0]));
+    }
+
     //Se não tiver nada ele só define vazio no campo apresentável
     if (inputValue.value == null || inputValue.value.length == 0) {
       this.displayedValue = [""];
@@ -117,18 +128,24 @@ export class ForeignKeyInputFieldComponent implements OnDestroy, AfterViewInit {
 
     //Verifica se o item contido na FormControl é um array
     if (inputValue.value instanceof Array) {
-      if (inputValue.value[0].hasOwnProperty(valueDisplayed) == false) {
-        valueDisplayed = "id";
+
+      var _displayedValues;
+
+      for (const obj of inputValue.value) {
+
+        _displayedValues.push(obj[searchableProperty]);
+
       }
 
-      this.displayedValue = inputValue.value.map(value => value[valueDisplayed]);
+      // this.displayedValue = inputValue.value.map(value => value[valueDisplayed]);
+      this.displayedValue = _displayedValues;
 
     } else {
       //Caso não for array
-      if (inputValue.value[valueDisplayed] == undefined) {
-        valueDisplayed = "id";
-      }
-      this.displayedValue = inputValue.value[valueDisplayed];
+      // if (inputValue.value[valueDisplayed] == undefined) {
+      //   valueDisplayed = "id";
+      // }
+      this.displayedValue = inputValue.value[searchableProperty];
     }
   }
 
@@ -226,6 +243,7 @@ export class ForeignKeyInputFieldComponent implements OnDestroy, AfterViewInit {
    * @param data Dados do item a ser criado ou editado. Se for null ele só criará.
    */
   openFormDialogToCreateItem(currentAction: string, data?) {
+    console.log(this.fieldName);
 
     const config: IDinamicBaseResourceFormComponent = {
       dataToCreatePage: this.dataToCreatePage,
@@ -299,17 +317,22 @@ export class ForeignKeyInputFieldComponent implements OnDestroy, AfterViewInit {
   }
 
   setNewValueToInput(newItems: object[]) {
-    var objectsID: string[] = [];//Armazenará os IDs dos objetos que foram selecinados/adicionados
+    //var objectsID: string[] = [];//Armazenará os IDs dos objetos que foram selecinados/adicionados
     var displayedValues: string[] = [];//Valores apresentáveis dos objetos
+    var searchableProperty: string;
+
+    const hasProperty = newItems.some(obj => obj.hasOwnProperty(this.fieldDisplayedInLabel) == true);
+
+    if (hasProperty == true) {
+      searchableProperty = this.fieldDisplayedInLabel;
+    } else {
+      searchableProperty = this.getFirstNonIdKey(newItems[0]);
+    }
 
     for (const obj of newItems) {
-      if (obj.hasOwnProperty('id')) {
-        objectsID.push(obj["id"]);
-      }
 
-      if (obj.hasOwnProperty(this.fieldDisplayedInLabel)) {
-        displayedValues.push(obj[this.fieldDisplayedInLabel]);
-      }
+      displayedValues.push(obj[searchableProperty]);
+
     }
 
     this.inputValue.setValue(newItems);
@@ -317,6 +340,16 @@ export class ForeignKeyInputFieldComponent implements OnDestroy, AfterViewInit {
 
     this.displayedValue = displayedValues;
     // console.log("displayedValue contém: ",this.displayedValue);
+  }
+
+  getFirstNonIdKey(obj: Object): string | null {
+    const keys = Object.keys(obj);
+    for (let key of keys) {
+      if (key !== 'id' && key !== '_id') {
+        return key;
+      }
+    }
+    return null; // Se não houver nenhuma chave além de 'id'
   }
 
 }

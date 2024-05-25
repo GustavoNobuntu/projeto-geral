@@ -83,5 +83,11 @@
         "defaultSuccessMessage": "Operation successful",
         "defaultErrorMessage": "Operation error",
         "rememberToSave": "Tem certeza de que deseja sair? Suas alterações podem não ser salvas."
+    },
+    "auth-callback-page":{
+        "authentication-error-clientId-missmatch":"This application does not have permission to access the domain identity provider. Consult the application administrator."
+    },
+    "auth-signin-page":{
+        "authentication-error-redirect-to-signin":""
     }
 }

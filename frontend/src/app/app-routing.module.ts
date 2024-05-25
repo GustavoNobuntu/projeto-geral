@@ -7,7 +7,7 @@ import { SideNavComponent } from './shared/components/side-nav/side-nav.componen
 
 export const appRoutes: Route[] = [
 
-  { path: '', pathMatch: 'full', redirectTo: 'visita' },
+  { path: '', pathMatch: 'full', component: SideNavComponent },
 
   // Rotas para usuário não autenticados
   {

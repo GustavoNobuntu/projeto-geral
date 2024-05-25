@@ -56,7 +56,7 @@ export class AuthService {
       const parsedData = JSON.parse(sessionData);
       return parsedData?.access_token || '';
     } catch (e) {
-      return '';
+      return null;
     }
 
   }
@@ -73,8 +73,8 @@ export class AuthService {
     
   }
 
-  login(): void {
-    this.userManager.signinRedirect();
+  login(): Promise<void> {
+    return this.userManager.signinRedirect();
   }
 
   async completeAuthentication(): Promise<void> {
@@ -100,28 +100,19 @@ export class AuthService {
   check(): Observable<boolean> {
 
     // Verificar se o usuário está logado
-    // console.log("Está sendo feito a verificação do guard");
-    // console.log("authenticated :", this._authenticated);
-    // if (this._authenticated) {
-    //   return of(true);
-    // }
-    // // Verificar se ele não tem o accessToken
-    // console.log("Access token: ", this.accessToken);
-    // if (!this.accessToken) {
-    //   return of(false)
-    // }
-    // // Verificação se o token expirou
-    // if (AuthUtils.isTokenExpired(this.accessToken) == false) {
-    //   return of(true);
-    // }
+    if (this._authenticated) {
+      return of(true);
+    }
 
     if (this.isLoggedIn() == true) {
       return of(true);
     }
 
+    if(this.accessToken != null && this.accessToken != ''){
+      return of(true);
+    }
+
     return of(false);
-    // If the access token exists and it didn't expire, sign in using it
-    // return this.signInUsingToken();
   }
 
   /**
