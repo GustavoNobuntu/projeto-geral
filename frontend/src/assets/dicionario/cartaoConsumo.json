@@ -32,7 +32,7 @@
             "className": "Cliente",
             "many": false,
             "apiUrl": "api/cliente",
-            "fieldDisplayedInLabel": "nomee",
+            "fieldDisplayedInLabel": "nome",
             "visibleCard": true,
             "visibleGrid": true,
             "visibleFilter": true,
