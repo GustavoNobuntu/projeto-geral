@@ -168,11 +168,11 @@ export class DinamicBaseResourceFormComponent implements AfterViewInit {
 
   submitForm() {
     this.submittingForm = true;
-
-    if (this.currentAction == "new")
+    if (this.currentAction == "new"){
       this.createResource();
-    else // currentAction == "edit"
+    } else {
       this.updateResource();
+    }
   }
 
   private loadResorceWithLocalStorage() {
@@ -208,9 +208,9 @@ export class DinamicBaseResourceFormComponent implements AfterViewInit {
       next: (resource) => {
         this.resource = resource;
         //TODO usar transloco nessas mensagens
-        // console.log("Dados estão sendo obtidos da api para popular o formulário: ", resource);
         if (this.resourceForm == null) { console.error("ResourceForm não foi instanciado") }
         this.resourceForm.patchValue(resource) // binds loaded resource data to resourceForm
+        // console.log("Dados do resorceForm que serão enviados para a API: ", this.resourceForm.value);
       },
       error: (error) => alert(this.translocoService.translate("componentsBase.Alerts.readErrorMessage"))
     });
@@ -236,7 +236,6 @@ export class DinamicBaseResourceFormComponent implements AfterViewInit {
 
   protected createResource() {
     const resource = this.resourceForm.value;
-
     if (resource.updatedAt == null) resource.updatedAt = new Date();
 
     this.resourceService.create(resource).subscribe({
@@ -257,7 +256,7 @@ export class DinamicBaseResourceFormComponent implements AfterViewInit {
 
   protected updateResource() {
     const resource = this.resourceForm.value;
-
+    
     if (resource.updatedAt == null) resource.updatedAt = new Date();
 
     this.resourceService.update(resource.id, resource).subscribe({
@@ -319,6 +318,7 @@ export class DinamicBaseResourceFormComponent implements AfterViewInit {
   protected buildResourceForm(): void {
     this.resourceForm = this.formBuilder.group({
       id: [null],
+      updatedAt: [null]
     });
   }
 
