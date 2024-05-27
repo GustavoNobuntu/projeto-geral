@@ -196,8 +196,15 @@ export class ForeignKeyInputFieldComponent implements OnDestroy, AfterViewInit {
 
   openSelectableItemsListDialogToEditItems() {
 
+    var items : Object[];
+    if(this.inputValue.value instanceof Array == false){
+      items = [this.inputValue.value];
+    } else {
+      items = this.inputValue.value;
+    }
+
     const config: IDefaultListComponentDialogConfig = {
-      itemsDisplayed: this.inputValue.value,
+      itemsDisplayed: items,
       columnsQuantity: 2,
       displayedfieldsName: this.value.propertiesAttributes.map(attribute => attribute.name),
       fieldsType: this.value.propertiesAttributes.map(attribute => attribute.type),
@@ -216,7 +223,6 @@ export class ForeignKeyInputFieldComponent implements OnDestroy, AfterViewInit {
       isEnabledToGetDataFromAPI: false
     }
 
-    // const dialogRef = this.matDialog.open(SelectedItemsListComponent, {
     const dialogRef = this.matDialog.open(DefaultListComponent, {
       width: '100%',
       height: '100%',

@@ -106,11 +106,11 @@ export class GeneratedFormFactoryService {
     } else {
       attributes = this.formGeneratorService.getAttributesData(createFormParams.dataToCreatePage);
     }
-
+    
+    createdComponent.formIsReady.pipe(take(1)).subscribe(() => { createFormParams.getDataFromAPIFunction() })//Quando o formulário é terminado de ser construido ele chama a função para obter os dados
     createdComponent.resourceForm = createFormParams.resourceForm;
     createdComponent.submitFormFunction = createFormParams.submitFormFunction;
     createdComponent.deleteFormFunction = createFormParams.deleteFormFunction;
-    createdComponent.formIsReady.pipe(take(1)).subscribe(() => { createFormParams.getDataFromAPIFunction() })//Quando o formulário é terminado de ser construido ele chama a função para obter os dados
     createdComponent.currentFormAction = createFormParams.currentFormAction;
     createdComponent.attributes = attributes;
     createdComponent.className = className;

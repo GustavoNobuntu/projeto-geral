@@ -216,7 +216,9 @@ export class DefaultListComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     setTimeout(() => {
       if (this.isEnabledToGetDataFromAPI == true) {
-        this.getData(this.apiUrl);
+        this.getDataFromAPI(this.apiUrl);
+      } else {
+        this.getData(this.itemsDisplayed);
       }
     }, 0);
   }
@@ -225,7 +227,7 @@ export class DefaultListComponent implements AfterViewInit, OnDestroy {
    * Realiza a requisição na API para obter os dados e popular a lista.
    * @param apiURL Campos pelo qual será realizada a busca no campo de buscas. @example "api/carros"
    */
-  getData(apiURL: string) {
+  getDataFromAPI(apiURL: string) {
 
     this.requestAllValuesFromAPI(apiURL).pipe(
       take(1),
@@ -242,6 +244,7 @@ export class DefaultListComponent implements AfterViewInit, OnDestroy {
         this.itemsDisplayed = itemsDisplayed;
 
         if (itemsDisplayed.length == 0) return;
+        console.log("Itens obtidos na requisição: ", itemsDisplayed);
 
         if (this.maxDisplayedItems > this.itemsDisplayed.length) this.maxDisplayedItems = this.itemsDisplayed.length;
 
@@ -249,10 +252,22 @@ export class DefaultListComponent implements AfterViewInit, OnDestroy {
 
         this.createItemsOnList(itemsToDisplay);
       },
-      error(error){
+      error(error) {
         //TODO permissio error
       }
     });
+  }
+
+  getData(itemsDisplayed: Object[]) {
+    if (itemsDisplayed.length == 0) return;
+
+    this.isLoading = false;
+
+    if (this.maxDisplayedItems > itemsDisplayed.length) this.maxDisplayedItems = itemsDisplayed.length;
+
+    const itemsToDisplay = itemsDisplayed.slice(0, this.maxDisplayedItems);
+
+    this.createItemsOnList(itemsToDisplay);
   }
 
   /**
@@ -300,11 +315,12 @@ export class DefaultListComponent implements AfterViewInit, OnDestroy {
    * Encaminha para pagina de edição.
    * @param item Dados do item que será alterado. @example [{"name":"Marie", "age":22}.
    */
-  editItem(item) {
+  editItem(item: Object) {
+    console.log("Objeto que será alterado: ",item)
     if (this.useFormOnDialog == true) {
-      this.openFormOnDialog("edit", item.id);
+      this.openFormOnDialog("edit", item["id"]);
     } else {
-      this.goToEditPage(item.id);
+      this.goToEditPage(item["id"]);
     }
   }
 
@@ -330,7 +346,7 @@ export class DefaultListComponent implements AfterViewInit, OnDestroy {
     if (action !== "edit" && action !== "new") return;
     if (this.useFormOnDialog == false) return;
 
-    console.log("Dados para criação do form através da lista: ", this.dataToCreatePage)
+    // console.log("Dados para criação do form através da lista: ", this.dataToCreatePage)
 
     const config: IDinamicBaseResourceFormComponent = {
       dataToCreatePage: this.dataToCreatePage,
@@ -528,7 +544,7 @@ export class DefaultListComponent implements AfterViewInit, OnDestroy {
 
         alert(this.translocoService.translate("componentsBase.Alerts.deleteSuccessMessage"));
 
-        this.getData(this.apiUrl);
+        this.getDataFromAPI(this.apiUrl);
       }
 
     });
