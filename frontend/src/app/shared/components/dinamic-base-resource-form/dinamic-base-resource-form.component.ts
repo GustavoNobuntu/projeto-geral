@@ -8,6 +8,7 @@ import { LocalStorageFormService } from 'app/shared/services/local-storage-form.
 import { DinamicBaseResourceService } from 'app/shared/services/shared.dinamicService';
 import { SelectedItemsListComponent } from '../selected-items-list/selected-items-list.component';
 import { TranslocoService } from '@ngneat/transloco';
+import { environment } from 'environments/environment';
 
 export interface IDinamicBaseResourceFormComponent {
   dataToCreatePage: object,
@@ -123,8 +124,9 @@ export class DinamicBaseResourceFormComponent implements AfterViewInit {
           this.currentAction = "new";
         }
 
-        // this.localStorageIsEnabled = true;
-        this.resourceService.apiPath = this.dataToCreatePage["attributes"].find(attribute => attribute.name === this.className).apiUrl;
+        //TODO deverá ser feito uma maneira mais segura de obter o apiUrl da classe chave estrangeira
+        var apiUrl = this.dataToCreatePage["attributes"].find((attribute)=> attribute["name"] == this.className)["apiUrl"];
+        this.resourceService.apiPath = environment.backendUrl+'/'+apiUrl;
 
         this.generatedFormFactoryService.getDataToCreateFrom(this.dataToCreatePage, this.target, () => { this.loadForm() }, this.resourceForm, () => { this.submitForm() }, () => { this.deleteResource() }, this.currentAction, this.className);
       } else {
@@ -206,7 +208,7 @@ export class DinamicBaseResourceFormComponent implements AfterViewInit {
       next: (resource) => {
         this.resource = resource;
         //TODO usar transloco nessas mensagens
-        console.log("Dados estão sendo obtidos da api para popular o formulário: ", resource);
+        // console.log("Dados estão sendo obtidos da api para popular o formulário: ", resource);
         if (this.resourceForm == null) { console.error("ResourceForm não foi instanciado") }
         this.resourceForm.patchValue(resource) // binds loaded resource data to resourceForm
       },

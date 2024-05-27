@@ -247,7 +247,6 @@ export class ForeignKeyInputFieldComponent implements OnDestroy, AfterViewInit {
    * @param data Dados do item a ser criado ou editado. Se for null ele só criará.
    */
   openFormDialogToCreateItem(currentAction: string, data?) {
-    console.log(this.fieldName);
 
     const config: IDinamicBaseResourceFormComponent = {
       dataToCreatePage: this.dataToCreatePage,
@@ -255,8 +254,6 @@ export class ForeignKeyInputFieldComponent implements OnDestroy, AfterViewInit {
       itemId: data?.id,
       currentAction: currentAction,
     }
-
-    console.log("Dados para abertura do formulário de criação: ", config);
 
     const dialogRef = this.matDialog.open(DinamicBaseResourceFormComponent, {
       width: '100%',

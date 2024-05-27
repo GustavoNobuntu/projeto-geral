@@ -67,6 +67,7 @@ export class GeneratedFormFactoryService {
       deleteFormFunction: deleteFormFunction,
       currentFormAction: currentFormAction,
       dataToCreatePage: JSONDictionary,
+      secondaryFormClassName: secondaryFormClassName
     }
 
     this.createForm(createFormParams);
@@ -88,10 +89,13 @@ export class GeneratedFormFactoryService {
       createdComponent = createFormParams.target.createComponent(GeneratedSimpleFormComponent).instance;
     }
 
-
     let className;
-    if (createFormParams.dataToCreatePage["config"].hasOwnProperty('name')) {
-      className = createFormParams.dataToCreatePage["config"].name;
+    if(createFormParams.secondaryFormClassName){
+      className = createFormParams.secondaryFormClassName;
+    } else {
+      if (createFormParams.dataToCreatePage["config"].hasOwnProperty('name')) {
+        className = createFormParams.dataToCreatePage["config"].name;
+      }
     }
 
     let attributes;
