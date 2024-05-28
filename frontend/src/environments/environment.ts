@@ -1,7 +1,7 @@
 export const environment = { 
     applicationTitle: "ExemploTitulo", 
-    backendUrl: "https://api.allystore.sale", 
-    frontendUrl: "https://app.allystore.sale", 
+    backendUrl: "https://backend-fontescorretosim-oe4uwswcda-uc.a.run.app", 
+    frontendUrl: "https://frontend-fontescorretosim-oe4uwswcda-uc.a.run.app", 
     menuPath: "../../../../assets/dicionario/menu/menu.json", 
 
     // Dados Relacionados ao Azure AD B2C 
