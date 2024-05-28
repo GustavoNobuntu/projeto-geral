@@ -1,98 +1,113 @@
 {
     "config":{ 
-        "modified": "2024-03-28T05:32:29.666353Z", 
+        "modified": "2024-05-28T18:47:30.849969Z", 
         "name": "Menu Principal", 
         "type": "sandwich"
     }, 
     "itens": [ 
         { 
-            "name": "CartaoConsumo",
-            "apiUrl": "/cartaoConsumo",
-            "routeUrl": "cartaoConsumo", 
+            "name": "Customers", 
+            "routeUrl": "customers", 
             "icon": "feather:box"
         },
         { 
-            "name": "Cliente", 
-            "apiUrl":"/clientes",
-            "routeUrl": "cliente", 
+            "name": "Employees", 
+            "routeUrl": "employees ", 
             "icon": "feather:box"
         },
         { 
-            "name": "CadastroCliente",
-            "apiUrl": "/cadastroCliente",
-            "routeUrl": "cadastroCliente", 
+            "name": "InventoryTransactionTypes", 
+            "routeUrl": "inventoryTransactionTypes  ", 
             "icon": "feather:box"
         },
         { 
-            "name": "CartaoCliente",
-            "apiUrl": "/cartaoCliente",
-            "routeUrl": "cartaoCliente", 
+            "name": "InventoryTransactions", 
+            "routeUrl": "inventoryTransaction", 
             "icon": "feather:box"
         },
         { 
-            "name": "Categoria",
-            "apiUrl": "/categoria",
-            "routeUrl": "categoria", 
+            "name": "Invoices", 
+            "routeUrl": "invoices", 
             "icon": "feather:box"
         },
         { 
-            "name": "Cozinha",
-            "apiUrl": "/cozinha",
-            "routeUrl": "cozinha", 
+            "name": "OrderDetails", 
+            "routeUrl": "orderDetails", 
             "icon": "feather:box"
         },
         { 
-            "name": "Endereco",
-            "apiUrl": "/endereco", 
-            "routeUrl": "endereco", 
+            "name": "OrderDetailsStatus", 
+            "routeUrl": "orderDetailsStatus", 
             "icon": "feather:box"
         },
         { 
-            "name": "Garcon",
-            "apiUrl": "/garcon",
-            "routeUrl": "garcon", 
+            "name": "Orders", 
+            "routeUrl": "orders", 
             "icon": "feather:box"
         },
         { 
-            "name": "ItemPedido",
-            "apiUrl": "/itemPedido",
-            "routeUrl": "itemPedido", 
+            "name": "OrdersStatus", 
+            "routeUrl": "ordersStatus", 
             "icon": "feather:box"
         },
         { 
-            "name": "Menu",
-            "apiUrl": "/menu",
-            "routeUrl": "menu", 
+            "name": "OrdersTaxStatus", 
+            "routeUrl": "ordersTaxStatus", 
             "icon": "feather:box"
         },
         { 
-            "name": "Opcional",
-            "apiUrl": "/opcional", 
-            "routeUrl": "opcional", 
+            "name": "SalesReports", 
+            "routeUrl": "salesReports", 
             "icon": "feather:box"
         },
         { 
-            "name": "Pagamento",
-            "apiUrl": "/pagamento", 
-            "routeUrl": "pagamento", 
+            "name": "Shippers", 
+            "routeUrl": "shippers", 
             "icon": "feather:box"
         },
         { 
-            "name": "Pedido", 
-            "apiUrl": "/pedido",
-            "routeUrl": "pedido", 
+            "name": "Products", 
+            "routeUrl": "products", 
             "icon": "feather:box"
         },
         { 
-            "name": "Produto",
-            "apiUrl": "/produto", 
-            "routeUrl": "produto", 
+            "name": "PurchaseOrderDetails", 
+            "routeUrl": "purchaseOrderDetails", 
             "icon": "feather:box"
         },
         { 
-            "name": "TipoPagamento",
-            "apiUrl": "/tipoPagamento", 
-            "routeUrl": "tipoPagamento", 
+            "name": "PurchaseOrderStatus", 
+            "routeUrl": "purchaseOrderStatus", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "PurchaseOrders", 
+            "routeUrl": "purchaseOrders", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "Suppliers", 
+            "routeUrl": "suppliers", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "Strings", 
+            "routeUrl": "strings", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "Company", 
+            "routeUrl": "company", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "Application", 
+            "routeUrl": "application", 
+            "icon": "feather:box"
+        },
+        { 
+            "name": "CompanyApplicationToken", 
+            "routeUrl": "companyApplicationToken", 
             "icon": "feather:box"
         }
     ] 

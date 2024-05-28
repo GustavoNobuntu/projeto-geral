@@ -1,0 +1,32 @@
+{
+    "config":{ 
+        "modified": "2024-05-28T18:47:25.415765Z", 
+        "description": "Application",  
+        "name": "Application", 
+        "apiUrl": "api/application",
+        "route": "application",
+        "searchableFields": [
+           "name"
+        ], 
+        "localStorage": false,
+        "filter": true, 
+        "addNew": true, 
+        "edit": true, 
+        "columnsQuantity": 3,
+        "delete": true,
+        "isFormStepper": false,
+        "isLinearFormStepper": false
+    }, 
+    "attributes": [ 
+        { 
+            "name":"name", 
+            "type": "string", 
+            "mask": "Texto", 
+            "visibleCard": true, 
+            "visibleGrid": true, 
+            "visibleFilter": true, 
+            "visibleList": true, 
+            "visibleForm": true 
+        }
+    ] 
+}

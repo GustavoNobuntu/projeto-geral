@@ -1,89 +1,103 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const registerRoutes = require("./utils/registerRoutes.util");
-require('dotenv').config();
+require('dotenv').config();//adicionado
+const mongoose = require('mongoose');
+const registerRoutes = require("./app/utils/registerRoutes.util");
 const moment = require('moment-timezone');
 
-var corsOptions = {
-  origin: "*"
-};
+var corsOptions = { 
+  origin: process.env.CORS_ORIGIN 
+}; 
 
-app.use(cors(corsOptions));
+app.use(cors(corsOptions)); 
 // parse requests of content-type - application/json
 app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
-const mongoose = require('mongoose');
-mongoose.connect(process.env.DatabaseUri);
+mongoose.connect(process.env.DATABASE_URL);
 
-// simple route
-app.get("/", (req, res) => {
-  // console.log(req.headers);
-  res.json({ message: "Welcome to application." });
-});
-
-//Declara CartaoConsumo rotas
-require("./routes/cartaoConsumo.routes")(app);
-
-//Declara Cliente rotas
-require("./routes/cliente.routes")(app);
-
-//Declara CadastroCliente rotas
-require("./routes/cadastroCliente.routes")(app);
-
-//Declara CartaoCliente rotas
-require("./routes/cartaoCliente.routes")(app);
-
-//Declara Categoria rotas
-require("./routes/categoria.routes")(app);
-
-//Declara Cozinha rotas
-require("./routes/cozinha.routes")(app);
-
-//Declara Endereco rotas
-require("./routes/endereco.routes")(app);
-
-//Declara Garcon rotas
-require("./routes/garcon.routes")(app);
-
-//Declara ItemPedido rotas
-require("./routes/itemPedido.routes")(app);
-
-//Declara Menu rotas
-require("./routes/menu.routes")(app);
-
-//Declara Opcional rotas
-require("./routes/opcional.routes")(app);
-
-//Declara Pagamento rotas
-require("./routes/pagamento.routes")(app);
-
-//Declara Pedido rotas
-require("./routes/pedido.routes")(app);
-
-//Declara Produto rotas
-require("./routes/produto.routes")(app);
-
-//Declara TipoPagamento rotas
-require("./routes/tipoPagamento.routes")(app);
+require("./routes/session.routes")(app);
 
 require("./routes/user.routes")(app);
 
-require("./routes/session.routes")(app);
+require("./routes/functionsSystemRoles.routes")(app); 
+
+require("./routes/functionsSystem.routes")(app);  
+//Declara Customers rotas
+require("./routes/customers.routes")(app); 
+
+//Declara Employees rotas
+require("./routes/employees.routes")(app); 
+
+//Declara InventoryTransactionTypes rotas
+require("./routes/inventoryTransactionTypes.routes")(app); 
+
+//Declara InventoryTransactions rotas
+require("./routes/inventoryTransactions.routes")(app); 
+
+//Declara Invoices rotas
+require("./routes/invoices.routes")(app); 
+
+//Declara OrderDetails rotas
+require("./routes/orderDetails.routes")(app); 
+
+//Declara OrderDetailsStatus rotas
+require("./routes/orderDetailsStatus.routes")(app); 
+
+//Declara Orders rotas
+require("./routes/orders.routes")(app); 
+
+//Declara OrdersStatus rotas
+require("./routes/ordersStatus.routes")(app); 
+
+//Declara OrdersTaxStatus rotas
+require("./routes/ordersTaxStatus.routes")(app); 
+
+//Declara SalesReports rotas
+require("./routes/salesReports.routes")(app); 
+
+//Declara Shippers rotas
+require("./routes/shippers.routes")(app); 
+
+//Declara Products rotas
+require("./routes/products.routes")(app); 
+
+//Declara PurchaseOrderDetails rotas
+require("./routes/purchaseOrderDetails.routes")(app); 
+
+//Declara PurchaseOrderStatus rotas
+require("./routes/purchaseOrderStatus.routes")(app); 
+
+//Declara PurchaseOrders rotas
+require("./routes/purchaseOrders.routes")(app); 
+
+//Declara Suppliers rotas
+require("./routes/suppliers.routes")(app); 
+
+//Declara Strings rotas
+require("./routes/strings.routes")(app); 
+
+//Declara Company rotas
+require("./routes/company.routes")(app); 
+
+//Declara Application rotas
+require("./routes/application.routes")(app); 
+
+//Declara CompanyApplicationToken rotas
+require("./routes/companyApplicationToken.routes")(app); 
 
 // Obtém a hora atual e o fuso horário da máquina
 const now = moment();
 const timezone = moment.tz.guess();
 const currentTime = now.tz(timezone).format('YYYY-MM-DD HH:mm:ss');
 const currentTimeZone = now.tz(timezone).format('Z');
-
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
+  console.log(`Servidor está operando na porta ${PORT}.`);
   console.log(`Horário atual: ${currentTime}`);
   console.log(`Fuso horário: ${timezone} (UTC${currentTimeZone})`);
 
-  registerRoutes.saveFunctionsSystem();
+  registerRoutes.saveFunctionsSystem(); 
 });

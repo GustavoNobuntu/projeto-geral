@@ -1,55 +1,62 @@
-export const environment = {
-    applicationTitle: 'NadirDigital',
+export const environment = { 
+    applicationTitle: "ExemploTitulo", 
+    backendUrl: "https://projeto-geral-api-oe4uwswcda-rj.a.run.app", 
+    frontendUrl: "https://projeto-geral-spa-oe4uwswcda-rj.a.run.app", 
+    menuPath: "../../../../assets/dicionario/menu/menu.json", 
 
-    backendUrl: "https://projeto-geral-api-oe4uwswcda-rj.a.run.app",
-    frontEndUrl: "https://projeto-geral-spa-oe4uwswcda-rj.a.run.app",
-        
-    menuPath: "assets/dicionario/menu/menu.json",
+    // Dados Relacionados ao Azure AD B2C 
+    authority: 'https://allystore.b2clogin.com/b46b5b87-a08e-487b-ae9b-fec172a9a90b/b2c_1_entradaEcadastro/v2.0/', 
+    client_id:'46513151-51f8-4912-8051-8de83c3ef9ed', 
+    redirect_uri: 'callback',
+    post_logout_redirect_uri: 'logout',
+    scope: 'https://allystore.onmicrosoft.com/46513151-51f8-4912-8051-8de83c3ef9ed/test.read openid',
 
-    // Dados Relacionados ao Azure AD B2C
-    authority: 'https://allystore.b2clogin.com/b46b5b87-a08e-487b-ae9b-fec172a9a90b/b2c_1_entradaEcadastro/v2.0/',//app-jef
-    client_id:'aa90beb3-3aca-45aa-991a-e70d3ee59708', //app-jef-cloud
-    redirect_uri: 'callback',//app-jef-cloud
-    post_logout_redirect_uri: 'logout',//app-jef-cloud
-    scope: 'https://allystore.onmicrosoft.com/aa90beb3-3aca-45aa-991a-e70d3ee59708/test.read openid',//app-jef-cloud
+    tenant_id: 'b46b5b87-a08e-487b-ae9b-fec172a9a90b', 
+    provider: 'allystore.b2clogin.com', 
 
-    tenant_id: 'b46b5b87-a08e-487b-ae9b-fec172a9a90b',
-    provider: 'allystore.b2clogin.com',
+    signInPolitical: 'b2c_1_entradaEcadastro', 
+    passwordResetPolitical: 'b2c_1_password_reset', 
+    profileEditPolitical: 'b2c_1_profile_edit', 
 
-    signInPolitical: 'b2c_1_entradaEcadastro',
-    passwordResetPolitical: 'b2c_1_password_reset',
-    profileEditPolitical: 'b2c_1_profile_edit',
-    // --
+    customersJSONPath: '../../../../assets/dicionario/customers.json', 
 
-    //Caminhos para o JSON de geração de telas
+    employeesJSONPath: '../../../../assets/dicionario/employees.json', 
 
-    cartaoConsumoJSONPath: '../../../../assets/dicionario/cartaoConsumo.json',
+    inventoryTransactionTypesJSONPath: '../../../../assets/dicionario/inventoryTransactionTypes.json', 
 
-    clienteJSONPath: '../../../../assets/dicionario/cliente.json',
+    inventoryTransactionsJSONPath: '../../../../assets/dicionario/inventoryTransactions.json', 
 
-    cadastroClienteJSONPath: '../../../../assets/dicionario/cadastroCliente.json',
+    invoicesJSONPath: '../../../../assets/dicionario/invoices.json', 
 
-    cartaoClienteJSONPath: '../../../../assets/dicionario/cartaoCliente.json',
+    orderDetailsJSONPath: '../../../../assets/dicionario/orderDetails.json', 
 
-    categoriaJSONPath: '../../../../assets/dicionario/categoria.json',
+    orderDetailsStatusJSONPath: '../../../../assets/dicionario/orderDetailsStatus.json', 
 
-    cozinhaJSONPath: '../../../../assets/dicionario/cozinha.json',
+    ordersJSONPath: '../../../../assets/dicionario/orders.json', 
 
-    enderecoJSONPath: '../../../../assets/dicionario/endereco.json',
+    ordersStatusJSONPath: '../../../../assets/dicionario/ordersStatus.json', 
 
-    garconJSONPath: '../../../../assets/dicionario/garcon.json',
+    ordersTaxStatusJSONPath: '../../../../assets/dicionario/ordersTaxStatus.json', 
 
-    itemPedidoJSONPath: '../../../../assets/dicionario/itemPedido.json',
+    salesReportsJSONPath: '../../../../assets/dicionario/salesReports.json', 
 
-    menuJSONPath: '../../../../assets/dicionario/menu.json',
+    shippersJSONPath: '../../../../assets/dicionario/shippers.json', 
 
-    opcionalJSONPath: '../../../../assets/dicionario/opcional.json',
+    productsJSONPath: '../../../../assets/dicionario/products.json', 
 
-    pagamentoJSONPath: '../../../../assets/dicionario/pagamento.json',
+    purchaseOrderDetailsJSONPath: '../../../../assets/dicionario/purchaseOrderDetails.json', 
 
-    pedidoJSONPath: '../../../../assets/dicionario/pedido.json',
+    purchaseOrderStatusJSONPath: '../../../../assets/dicionario/purchaseOrderStatus.json', 
 
-    produtoJSONPath: '../../../../assets/dicionario/produto.json',
+    purchaseOrdersJSONPath: '../../../../assets/dicionario/purchaseOrders.json', 
 
-    tipoPagamentoJSONPath: '../../../../assets/dicionario/tipoPagamento.json',
+    suppliersJSONPath: '../../../../assets/dicionario/suppliers.json', 
+
+    stringsJSONPath: '../../../../assets/dicionario/strings.json', 
+
+    companyJSONPath: '../../../../assets/dicionario/company.json', 
+
+    applicationJSONPath: '../../../../assets/dicionario/application.json', 
+
+    companyApplicationTokenJSONPath: '../../../../assets/dicionario/companyApplicationToken.json', 
 };

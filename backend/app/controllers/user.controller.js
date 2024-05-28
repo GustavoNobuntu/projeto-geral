@@ -1,48 +1,10 @@
 const db = require("../../models");
 const User = db.user;
-const findDataByCustomQuery = require("./customQuery.util");
-const getSchemaRefs = require("../../utils/populate.utils");
-
-validaCamposRequeridosUser = (req) => {
-  const camposRequeridosEmpty = new Array();
-  if (!req.body.UID) {
-    camposRequeridosEmpty.push("UID");
-  }
-  if (!req.body.TenantUID) {
-    camposRequeridosEmpty.push("TenantUID");
-  }
-  if (!req.body.username) {
-    camposRequeridosEmpty.push("username");
-  }
-  if (!req.body.firstName) {
-    camposRequeridosEmpty.push("firstName");
-  }
-  if (!req.body.lastName) {
-    camposRequeridosEmpty.push("lastName");
-  }
-  if (!req.body.memberType) {
-    camposRequeridosEmpty.push("memberType");
-  }
-  if (!req.body.Roles) {
-    camposRequeridosEmpty.push("Roles");
-  }
-  return camposRequeridosEmpty;
-}
+const findDataByCustomQuery = require("../utils/customQuery.util");
+const getSchemaRefs = require("./../utils/getSchemaRefs.utils");
 
 // Cria e salva um novo documento para a entidade User
 exports.create = async (req, res) => {
-  // Validate request
-  if (!req.body.UID) {
-    res.status(400).send({ message: "Conteúdo não pode ser vazio!" });
-    return;
-  }
-
-  // Validate required fields
-  const camposRequeridosEmpty = validaCamposRequeridosUser(req);
-  if (camposRequeridosEmpty.length > 0) {
-    res.status(400).send({ message: "Campos requeridos (" + camposRequeridosEmpty.join(",") + ") não podem ser vazios!" });
-    return;
-  }
 
   // Create a User
   const user = new User({
@@ -86,15 +48,31 @@ exports.create = async (req, res) => {
     });
 };
 
+async function checkExistAnyUserAccount(){
+  await User.find().then(data => {
+    console.log("Dado reornado ao verificar se tem usuário: ",data);
+    if(data.length == 0){
+      return false;
+    } 
+
+    return true;
+    
+  }).catch(err => {
+    return Error("Erro ao verificar se tem algum usuário registrado na aplicação")
+  });
+}
+
 // Procura por todas as entidades do tipo User
 exports.findAll = (req, res) => {
   var condition = {};
 
-  let populate = getSchemaRefs(db.user.schema.obj);
-  let query = User.find();
-  if (populate.length > 0) {
-    query = query.populate(populate.join(" "));
-  }
+  let populate = getSchemaRefs(db.user.schema.obj); 
+
+  let query = User.find(); 
+    if(populate.length > 0){
+      query = query.populate(populate.join(" "));
+    }
+    
   query.then(data => {
     res.send(data);
   }).catch(err => {
@@ -144,7 +122,7 @@ exports.findOneByUID = (req, res) => {
     if (!data) {
       res.status(404).send({ message: "Não foi encontrado User com o uid " + UID });
     } else {
-      res.status(200).send(data);
+      res.send(data);
     }
   }).catch(err => {
     res.status(500).send({ message: "Erro ao buscar User com o uid=" + UID });
@@ -153,14 +131,6 @@ exports.findOneByUID = (req, res) => {
 
 // Altera uma entidade User
 exports.update = (req, res) => {
-
-  // Validate required fields
-  const camposRequeridosEmpty = validaCamposRequeridosUser(req);
-  if (camposRequeridosEmpty.length > 0) {
-    res.status(400).send({ message: "Campos requeridos (" + camposRequeridosEmpty.join(",") + ") não podem ser vazios!" });
-    return;
-  }
-
   const id = req.params.id;
 
   User.findByIdAndUpdate(id, req.body, { useFindAndModify: false })

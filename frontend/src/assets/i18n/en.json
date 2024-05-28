@@ -1,116 +1,229 @@
 {
-"CartaoConsumo": {
-        "CartaoConsumo": "consumption card",
-        "numeroCartao": "Card number",
-        "clientes": "Client"
+
+"Customers": {
+        "Customers": "Customers",
+        "company": "Company",
+        "lastName": "Sobrenome",
+        "firstName": "Primeiro Nome",
+        "emailAddress": "Email Address",
+        "jobTitle": "Job Title",
+        "businessPhone": "Business Phone",
+        "homePhone": "Home Phone",
+        "mobilePhone": "Mobile Phone",
+        "faxNumber": "Fax Number",
+        "address": "Address",
+        "city": "City",
+        "stateProvince": "State Province Company",
+        "zipPostalCode": "Zip Postal Code",
+        "countryRegion": "Country Region",
+        "webPage": "Web Page",
+        "notes": "Notes",
+        "attachments": "Attachments"
     },
-"Cliente": {
-        "cliente": "Clients",
-        "nome": "Client name",
-        "telefone": "Phone client"
+"Employees": {
+        "Employees": "Employees",
+        "company": "Company",
+        "lastName": "Sobrenome",
+        "firstName": "Primeiro Nome",
+        "emailAddress": "Email Address",
+        "jobTitle": "Job Title",
+        "businessPhone": "Business Phone",
+        "homePhone": "Home Phone",
+        "mobilePhone": "Mobile Phone",
+        "faxNumber": "Fax Number",
+        "address": "Address",
+        "city": "City",
+        "stateProvince": "State Province Company",
+        "zipPostalCode": "Zip Postal Code",
+        "countryRegion": "Country Region",
+        "webPage": "Web Page",
+        "notes": "Notes",
+        "attachments": "Attachments"
     },
-"CadastroCliente": {
-        "CadastroCliente": "Client Register",
-        "nomeCliente": "Client name",
-        "sobrenomeCliente": "Cliente  last name",
-        "emailCliente": "Client Email",
-        "emailclienteConfirma": "Client Email Confirm",
-        "senhaCliente": "Password client",
-        "senhaclienteConfirma": "Client Password Confirm"
+"InventoryTransactionTypes": {
+        "InventoryTransactionTypes": "InventoryTransactionTypes",
+        "typeName": "TypeName"
     },
-"CartaoCliente": {
-        "CartaoCliente": "Client Card",
-        "numeroCartao": "card number",
-        "nomeImpresso": "printed name",
-        "anoValidade": "validity year",
-        "mesValidade": "month validity",
-        "diaValidade": "validity day",
-        "cvv": "CVV",
-        "pedidoCartao": "card request",
-        "cpfcnpj": "CPFCNPJ",
-        "tipoPagamento": "Payment Type ID"
+"InventoryTransactions": {
+        "InventoryTransactions": "InventoryTransaction",
+        "transactionType": "TransactionType",
+        "transactionCreatedDate": "Transaction Created Date",
+        "transactionModifiedDate": "Transaction Modified Date",
+        "product": "Product",
+        "quantity": "Quantity",
+        "purchaseOrder": "Purchase Order ",
+        "customerOrder": "Customer Order",
+        "comments": "Comments "
     },
-"Categoria": {
-        "Categoria": "Category",
-        "nomeCategoria": "Category Name",
-        "usaopcoesTamanho": "Use Size Options",
-        "usaopcoesBorda": "Use Edge Options",
-        "setor": "Sector"
+"Invoices": {
+        "Invoices": "Invoices",
+        "order": "Order",
+        "invoiceDate": "Invoice Date",
+        "dueDate": "Due Date",
+        "tax": "Tax",
+        "shipping": "Shipping",
+        "amountDue": "Amount Due"
     },
-"Cozinha": {
-        "Cozinha": "Kitchen",
-        "nomePedido": "Order name",
-        "dataHora": "date and time",
-        "statusPedido": "order status",
-        "itemPedido": "ID Items Ordered"
+"OrderDetails": {
+        "OrderDetails": "Order Details",
+        "order": "Order",
+        "product": "Product",
+        "quantity": "Quantity",
+        "unitPrice": "Unit Price",
+        "discount": "Discount",
+        "status": "Status",
+        "dateAllocated": "Product",
+        "purchaseOrderId": "Purchase Order Id",
+        "inventoryId": "Inventory Id"
     },
-"Endereco": {
-        "Endereco": "Address",
-        "rua": "Road",
-        "bairro": "Neighborhood",
-        "cidade": "City",
-        "numeroMoradia": "House Number",
-        "cep": "CEP",
-        "complemento": "Complement",
-        "cadastroCliente": "Client Registration ID"
+"OrderDetailsStatus": {
+        "OrderDetailsStatus": "Order Details Status",
+        "statusName": "status Name"
     },
-"Garcon": {
-        "Garcon": "Garcon",
-        "nomeGarcon": "Name Garcon",
-        "login": "Login Garcon",
-        "senha": "Password Garcon",
-        "comissao": "Commission"
+"Orders": {
+        "Orders": "Order",
+        "employee": "Employees",
+        "customer": "Customer",
+        "orderDate": "Order Date",
+        "shippedDate": "Shipped Date",
+        "shipper": "Shipper",
+        "shipName": "Ship Name",
+        "shipAddress": "Ship Address",
+        "shipCity": "Ship City",
+        "shipStateProvince": "Ship State Province",
+        "shipZipPostalCode": "Ship Zip Postal Code",
+        "shipCountryRegion": "Ship Country Region",
+        "shippingFee": "Shipping Fee",
+        "taxes": "Taxes",
+        "paymentType": "Payment Type",
+        "paidDate": "Paid Date",
+        "notes": "Notes",
+        "taxRate": "Employees",
+        "taxStatus": "Tax Rate",
+        "status": "Status",
+        "orderDetails": "OrderDetails"
     },
-"ItemPedido": {
-        "ItemPedido": "Order Item",
-        "nomePedido": "Name order",
-        "descricao": "Description",
-        "quantidadePedido": "Order Quantity",
-        "precoPedido": "Order price",
-        "numeroMesa": "Table number"
+"OrdersStatus": {
+        "OrdersStatus": "Orders Status",
+        "statusName": "StatusName"
     },
-"Menu": {
-        "Menu": "Menu",
-        "nomeMenu": "Name menu",
-        "descricaoMenu": "Description menu",
-        "preco": "Price",
-        "produto": "ID Product"
+"OrdersTaxStatus": {
+        "OrdersTaxStatus": "Orders Tax Status",
+        "taxStatusName": "TaxStatusName"
     },
-"Opcional": {
-        "Opcional": "Optional",
-        "nomeOpcional": "Name optional ",
-        "tipoOpcional": "Type optional",
-        "maximaOpcionais": "Maximum options",
-        "produto": "ID Product",
-        "categoria": "ID Category"
+"SalesReports": {
+        "SalesReports": "Sales Reports",
+        "display": "Display",
+        "title": "Title",
+        "filterRowSource": "TaxStFilter Row SourceatusName",
+        "padrao": "Padrao"
     },
-"Pagamento": {
-        "Pagamento": "Payment",
-        "valorPagamento": "Payment amount",
-        "datahoraPagamento": "Payment date and time",
-        "tipoPagamento": "Payment Type ID"
+"Shippers": {
+        "Shippers": "Shippers ",
+        "company": "Company",
+        "lastName": "Sobrenome",
+        "firstName": "Primeiro Nome",
+        "emailAddress": "Email Address",
+        "jobTitle": "Job Title",
+        "businessPhone": "Business Phone",
+        "homePhone": "Home Phone",
+        "mobilePhone": "Mobile Phone",
+        "faxNumber": "Fax Number",
+        "address": "Address",
+        "city": "City",
+        "stateProvince": "State Province Company",
+        "zipPostalCode": "Zip Postal Code",
+        "countryRegion": "Country Region",
+        "webPage": "Web Page",
+        "notes": "Notes",
+        "attachments": "Attachments"
     },
-"Pedido": {
-        "Pedido": "Order",
-        "pedidoCancelado": "Client name",
-        "datahoraPedido": "Phone client",
-        "pagamento": "Payment  ID",
-        "garcon": "ID Garcon",
-        "itemPedido": "ID Items Ordered",
-        "cartaoConsumo": "ID Card"
+"Products": {
+        "Products": "Products",
+        "supplierIds": "Supplier Ids",
+        "productCode": "Product Code",
+        "productName": "Product Name",
+        "description": "Description",
+        "standardCost": "Standard Cost",
+        "listPrice": "List Price",
+        "reorderLevel": "Reorder Level",
+        "targetLevel": "Target Level",
+        "quantityPerUnit": "Quantity Per Unit",
+        "discontinued": "Discontinued",
+        "minimumReorderQuantity": "Minimum Reorder Quantity",
+        "category": "Category",
+        "attachments": "Attachments"
     },
-"Produto": {
-        "Produto": "Product",
-        "nomeProduto": "Name Product ",
-        "codigo": "Phone client",
-        "descricaoProduto": "Phone client",
-        "precoProduto": "Phone client",
-        "imagem": "Phone client",
-        "categoria": "ID Category",
-        "opcional": "ID Optional "
+"PurchaseOrderDetails": {
+        "PurchaseOrderDetails": "Purchase Order Details",
+        "purchaseOrder": "Purchase Order",
+        "product": "Product",
+        "quantity": "Quantity",
+        "unitCost": "Unit Cost",
+        "dateReceived": "Date Received",
+        "postedToInventory": "Posted To Inventory",
+        "inventory": "Inventory"
     },
-"TipoPagamento": {
-        "TipoPagamento": "Payment Type",
-        "tipoPagamento": "Payment Type"
+"PurchaseOrderStatus": {
+        "PurchaseOrderStatus": "Purchase Order Status",
+        "status": "status"
+    },
+"PurchaseOrders": {
+        "PurchaseOrders": "Purchase Order",
+        "supplier": "Supplier",
+        "createdBy": "Employees",
+        "submittedDate": "Submitted Date ",
+        "creationDate": "Creation Date",
+        "status": "Purchase Order ",
+        "expectedDate": "Expected Date",
+        "shippingFee": "Shipping Fee",
+        "taxes": "Taxes",
+        "paymentDate": "Payment Date",
+        "paymentAmount": "Payment Amount",
+        "paymentMethod": "Payment Method",
+        "notes": "Notes",
+        "approvedBy": "Approved By",
+        "approvedDate": "Approved Date",
+        "submittedBy": "Submitted By",
+        "purchaseOrderDetails": "Purchase Order Detais"
+    },
+"Suppliers": {
+        "Suppliers": "Suppliers",
+        "company": "Company",
+        "lastName": "Sobrenome",
+        "firstName": "Primeiro Nome",
+        "emailAddress": "Email Address",
+        "jobTitle": "Job Title",
+        "businessPhone": "Business Phone",
+        "homePhone": "Home Phone",
+        "mobilePhone": "Mobile Phone",
+        "faxNumber": "Fax Number",
+        "address": "Address",
+        "city": "City",
+        "stateProvince": "State Province Company",
+        "zipPostalCode": "Zip Postal Code",
+        "countryRegion": "Country Region",
+        "webPage": "Web Page",
+        "notes": "Notes",
+        "attachments": "Attachments"
+    },
+"Strings": {
+        "Strings": "Strings",
+        "stringData": "StringData"
+    },
+"Company": {
+        "Company": "company",
+        "name": "Name",
+        "databaseSchema": "DataBaseSchema"
+    },
+"Application": {
+        "Application": "Application",
+        "name": "Name"
+    },
+"CompanyApplicationToken": {
+        "CompanyApplicationToken": "CompanyApplicationToken",
+        "company": "Company",
+        "application": "Application",
+        "token": "Token"
     }
 }

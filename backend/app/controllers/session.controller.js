@@ -1,55 +1,10 @@
 const db = require("../../models");
 const Session = db.session;
-const customQuery = require("./customQuery.util"); 
-const getSchemaRefs = require("./../../utils/populate.utils");
-validaCamposRequeridosSession = (req) => {
-    const camposRequeridosEmpty = new Array();
-    if (!req.body.userUID) {
-        camposRequeridosEmpty.push("userUID");
-    }
-    if (!req.body.user) {
-        camposRequeridosEmpty.push("user");
-    }
-    if (!req.body.tenantUID) {
-        camposRequeridosEmpty.push("tenantUID");
-    }
-    if (!req.body.accessToken) {
-        camposRequeridosEmpty.push("accessToken");
-    }
-    if (!req.body.initialDate) {
-        camposRequeridosEmpty.push("initialDate");
-    }
-    if (!req.body.finishSessionDate) {
-        camposRequeridosEmpty.push("finishSessionDate");
-    }
-  
-    if (!req.body.accessTokenExpirationDate) {
-        camposRequeridosEmpty.push("accessTokenExpirationDate");
-    }
-    if (!req.body.hashValidationLogin) {
-        camposRequeridosEmpty.push("hashValidationLogin");
-    }
-    if (!req.body.hashValidationLogout) {
-        camposRequeridosEmpty.push("hashValidationLogout");
-    }
-    return camposRequeridosEmpty;
-}
+const findDataByCustomQuery = require("../utils/customQuery.util"); 
+const getSchemaRefs = require("./../middleware/checkIfDateIsOlder.middleware");
 
 // Cria e salva um novo documento para a entidade Session
 exports.create = (req, res) => {
-    // Validate request
-    if (!req.body.userUID) {
-        res.status(400).send({ message: "Conteúdo não pode ser vazio!" });
-        return;
-    }
-
-    // Validate required fields
-    const camposRequeridosEmpty = validaCamposRequeridosSession(req);
-    if (camposRequeridosEmpty.length > 0) {
-        res.status(400).send({ message: "Campos requeridos ("+camposRequeridosEmpty.join(",") + ") não podem ser vazios!" });
-        return;
-    }
-
     // Create a Session
     const session = new Session({
         userUID: req.body.userUID ? req.body.userUID : null,
@@ -122,14 +77,6 @@ exports.findOne = (req, res) => {
 
 // Altera uma entidade Session
 exports.update = (req, res) => {
-
-    // Validate required fields
-    const camposRequeridosEmpty = validaCamposRequeridosSession(req);
-    if (camposRequeridosEmpty.length > 0) {
-        res.status(400).send({ message: "Campos requeridos ("+camposRequeridosEmpty.join(",") + ") não podem ser vazios!" });
-        return;
-    }
-
     const id = req.params.id;
 
     Session.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
@@ -206,6 +153,17 @@ exports.findAllStayConnected = (req, res) => {
       });
 };
 
-exports.findCustom = (req, res) => { 
-  findCustom(req, res, Session); 
+exports.findCustom = async (req, res) => {
+  const filterValues = req.body.filterValues;
+  const filterConditions = req.body.filterValues;
+
+  findDataByCustomQuery(filterValues, filterConditions, Session).then(data => {
+    res.status(200).send(data);
+  })
+  .catch(error => {
+    res.status(500).send({
+      message:
+        error.message || "Algum erro desconhecido ocorreu ao buscar dados pela busca customizável"
+    });
+  });
 };

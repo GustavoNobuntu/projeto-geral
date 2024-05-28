@@ -244,7 +244,7 @@ export class DefaultListComponent implements AfterViewInit, OnDestroy {
         this.itemsDisplayed = itemsDisplayed;
 
         if (itemsDisplayed.length == 0) return;
-        console.log("Itens obtidos na requisição: ", itemsDisplayed);
+        // console.log("Itens obtidos na requisição: ", itemsDisplayed);
 
         if (this.maxDisplayedItems > this.itemsDisplayed.length) this.maxDisplayedItems = this.itemsDisplayed.length;
 
@@ -316,7 +316,7 @@ export class DefaultListComponent implements AfterViewInit, OnDestroy {
    * @param item Dados do item que será alterado. @example [{"name":"Marie", "age":22}.
    */
   editItem(item: Object) {
-    console.log("Objeto que será alterado: ",item)
+    // console.log("Objeto que será alterado: ",item)
     if (this.useFormOnDialog == true) {
       this.openFormOnDialog("edit", item["id"]);
     } else {
@@ -578,7 +578,7 @@ export class DefaultListComponent implements AfterViewInit, OnDestroy {
     const confirmationDialog: IConfirmationDialog = {
       message: message
     }
-    console.log(message);
+    // console.log(message);
     return this.matDialog.open(ConfirmationDialogComponent, { data: confirmationDialog });
   }
 }
