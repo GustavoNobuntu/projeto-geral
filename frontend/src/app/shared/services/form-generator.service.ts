@@ -2,15 +2,11 @@ import { ComponentType } from '@angular/cdk/portal';
 import { Injectable, Injector, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { InputDateFieldComponent } from '../components/input-date-field/input-date-field.component';
-import { InputFieldComponent } from '../components/input-field/input-field.component';
-import { SelectorInputFieldComponent } from '../components/selector-input-field/selector-input-field.component';
-import { ForeignKeyInputFieldComponent } from '../components/foreign-key-input-field/foreign-key-input-field.component';
-import { DefaultListComponent } from '../components/default-list/default-list.component';
-import { CalculatorComponent } from '../components/calculator/calculator.component';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { SubformComponent } from '../components/subform/subform.component';
+import { FormField } from '../models/form-field';
+import { DynamicFormFieldFactory } from '../models/dinamic-form-factory';
+import { IPageStructure } from '../models/pageStructure';
 
 interface dialogConfiguration {
   width?: string,
@@ -78,10 +74,11 @@ export class FormGeneratorService {
   protected formBuilder: FormBuilder;
   protected matDialog: MatDialog;
 
-  constructor(protected injector: Injector) {
+  constructor(protected injector: Injector, private formFieldFactory: DynamicFormFieldFactory) {
     this.httpClient = injector.get(HttpClient);
     this.formBuilder = injector.get(FormBuilder);
     this.matDialog = injector.get(MatDialog);
+    
   }
 
   buildResourceForm(formBuilder: FormBuilder): FormGroup {
@@ -100,79 +97,8 @@ export class FormGeneratorService {
       return null;
     }
 
-    let createdComponent;
-    switch (createComponentData.fieldType) {
-      case 'date': {
-        createdComponent = createComponentData.target.createComponent(InputDateFieldComponent);
-        createdComponent.instance.label = createComponentData.labelTittle;
-
-        break;
-      }
-      case 'string': {
-        createdComponent = createComponentData.target.createComponent(InputFieldComponent);
-        createdComponent.instance.label = createComponentData.labelTittle;
-        createdComponent.instance.isRequired = true;
-
-        // createdComponent.instance.svgIcon = "heroicons_solid:user";
-        //createdComponent.instance.actionOnClickInIcon = ()=>{console.log("Você apertou no icone")}
-
-        break;
-      }
-      case 'object': {
-        createdComponent = createComponentData.target.createComponent(SelectorInputFieldComponent);
-        const component = createdComponent.instance;
-
-        component.label = createComponentData.labelTittle;
-        //TODO esses valore serão pegos pela API
-        // component.apiUrl = "http://localhost:8080/api/clientes";
-        component.apiURL = createComponentData.value.apiUrl;
-        //TODO fazer um verificador para ver se value carrega as informações, se não tiver, pegar algum campo
-        component.displayedSelectedVariableOnInputField = "nome";
-        component.returnedVariable = "id";
-        //TODO fazer um verificador para ver se value carrega as informações, se não tiver, pegar algum campo
-        // component.returnedVariable = value.returnedVariable;
-        break;
-      }
-      case 'foreignKey': {
-        createdComponent = createComponentData.target.createComponent(ForeignKeyInputFieldComponent);
-        createdComponent.instance.label = createComponentData.labelTittle;
-        createdComponent.instance.fieldName = createComponentData.fieldName;
-        createdComponent.instance.value = createComponentData.value;
-        // console.log("Dados para criar o componente de chave estrangeira: ",createComponentData.dataToCreatePage)
-        createdComponent.instance.dataToCreatePage = createComponentData.dataToCreatePage;
-        createdComponent.instance.fieldDisplayedInLabel = createComponentData.fieldDisplayedInLabel;
-        break;
-      }
-      case 'subform': {
-        createdComponent = createComponentData.target.createComponent(SubformComponent);
-        const component = createdComponent.instance;
-        component.JSONPath = createComponentData.dataToCreatePage;
-        break;
-      }
-      case 'number': {
-        createdComponent = createComponentData.target.createComponent(InputFieldComponent);
-        createdComponent.instance.label = createComponentData.labelTittle;
-        createdComponent.instance.svgIcon = "heroicons_solid:calculator";
-        createdComponent.instance.isRequired = true;
-        createdComponent.instance.iconPosition = "start";
-        createdComponent.instance.mask = "0*,0*";
-        createdComponent.instance.actionOnClickInIcon = () => { this.openDialog(CalculatorComponent, null) }
-
-        break;
-      }
-      //TODO fazer o componente da imagem
-
-      //TDO
-      default: {
-        return;
-        break;
-      }
-    }
-
-    if(createdComponent == null){ console.error("Componente não foi criado!"); return;}
-    createdComponent.instance.className = createComponentData.className;
-    createComponentData.resourceForm.addControl(createComponentData.fieldName, createdComponent.instance.inputValue);
-
+    const formField: FormField = this.formFieldFactory.createFormField(createComponentData);
+    createComponentData.resourceForm.addControl(createComponentData.fieldName,formField.createFormField(createComponentData));
   }
 
   openDialog(component: ComponentType<any>, dialogConfiguration: dialogConfiguration) {
@@ -249,7 +175,7 @@ export class FormGeneratorService {
     return JSONDictionary.config.formTabs;
   }
 
-  getJSONFromDicionario(JSONToGenerateScreenPath: any): Observable<any[]> {
-    return this.httpClient.get<any[]>(JSONToGenerateScreenPath);//TODO aqui será a rota do backend que pegará o JSON do usuário
+  getJSONFromDicionario(JSONToGenerateScreenPath: any): Observable<IPageStructure> {
+    return this.httpClient.get<IPageStructure>(JSONToGenerateScreenPath);//TODO aqui será a rota do backend que pegará o JSON do usuário
   }
 }

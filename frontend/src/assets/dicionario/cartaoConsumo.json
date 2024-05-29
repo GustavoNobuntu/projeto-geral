@@ -7,7 +7,10 @@
         "route": "cartaoConsumo",
         "localStorage": true,
         "filter": true,
-        "searchableFields": ["numeroCartao", "clientes"],
+        "searchableFields": [
+            "numeroCartao",
+            "clientes"
+        ],
         "addNew": true,
         "edit": true,
         "columnsQuantity": 3,
@@ -40,7 +43,9 @@
             "forageinKey": "id",
             "lookup": true,
             "viewDetails": true,
-            "searchable": ["nome"],
+            "searchable": [
+                "nome"
+            ],
             "addNew": true,
             "properties": [
                 {

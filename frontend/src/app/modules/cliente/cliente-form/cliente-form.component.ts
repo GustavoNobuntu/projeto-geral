@@ -18,11 +18,7 @@ export class ClienteFormComponent extends BaseResourceFormComponent<Cliente> imp
 
   JSONPath : string = environment.clienteJSONPath; 
 
-  @ViewChild('placeToRender', {read: ViewContainerRef}) target!: ViewContainerRef; 
-  /** 
-   * Subject responsável por remover os observadores que estão rodando na pagina no momento do componente ser deletado. 
-   */ 
-//  private ngUnsubscribe = new Subject(); 
+  @ViewChild('placeToRender', {read: ViewContainerRef}) target!: ViewContainerRef;
 
   constructor(
     protected clienteService: ClienteService,//Linha alterável com base na classe 
@@ -37,7 +33,9 @@ export class ClienteFormComponent extends BaseResourceFormComponent<Cliente> imp
   ngAfterViewInit(): void { 
     this.formGeneratorService.getJSONFromDicionario(this.JSONPath).pipe(takeUntil(this.ngUnsubscribe)).subscribe((JSONDictionary: any) => {
 
-      this.generatedFormFactoryService.getDataToCreateFrom(JSONDictionary, this.target, ()=>{this.loadResource()}, this.resourceForm, ()=>{this.submitForm()}, ()=>{this.deleteResource()}, this.currentAction)
+      // this.generatedFormFactoryService.getDataToCreateFrom(JSONDictionary, this.target, ()=>{this.loadResource()}, this.resourceForm, ()=>{this.submitForm()}, ()=>{this.deleteResource()}, this.currentAction)
+      this.generatedFormFactoryService.createForm({target: this.target, getDataFromAPIFunction: ()=>{this.loadResource()}, submitFormFunction: ()=>{this.submitForm()}, deleteFormFunction: ()=>{this.deleteResource()}, currentFormAction: this.currentAction, dataToCreatePage: JSONDictionary, formOption: JSONDictionary.config.isFormStepper ? "stepperForm" : null, resourceForm: this.resourceForm, secondaryFormClassName: null })
+    
     }); 
   } 
 

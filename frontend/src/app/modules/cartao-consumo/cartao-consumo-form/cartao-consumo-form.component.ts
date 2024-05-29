@@ -7,6 +7,8 @@ import { FormGeneratorService } from "app/shared/services/form-generator.service
 import { GeneratedFormFactoryService } from "app/shared/services/generated-form-factory.service";  
 import { environment } from 'environments/environment';; 
 import { Subject, takeUntil } from "rxjs"; 
+import { HttpClient } from "@angular/common/http";
+import { IPageStructure } from "app/shared/models/pageStructure";
 
 @Component({
   selector: 'app-details-cartao-consumo',
@@ -25,16 +27,17 @@ export class CartaoConsumoFormComponent extends BaseResourceFormComponent<Cartao
     protected cartaoConsumoService: CartaoConsumoService,//Linha alterável com base na classe 
     protected injector: Injector, 
     private generatedFormFactoryService: GeneratedFormFactoryService, 
-    private formGeneratorService: FormGeneratorService 
+    private formGeneratorService: FormGeneratorService,
+    protected httpClient: HttpClient
   ) { 
     super(injector, new CartaoConsumo(), cartaoConsumoService, CartaoConsumo.fromJson);//Linha alterável com base na classe 
     this.buildResourceForm(); 
   } 
 
   ngAfterViewInit(): void { 
-    this.formGeneratorService.getJSONFromDicionario(this.JSONPath).pipe(takeUntil(this.ngUnsubscribe)).subscribe((JSONDictionary: any) => {
+    this.formGeneratorService.getJSONFromDicionario(this.JSONPath).pipe(takeUntil(this.ngUnsubscribe)).subscribe((JSONDictionary: IPageStructure) => {
 
-      this.generatedFormFactoryService.getDataToCreateFrom(JSONDictionary, this.target, ()=>{this.loadResource()}, this.resourceForm, ()=>{this.submitForm()}, ()=>{this.deleteResource()}, this.currentAction)
+      this.generatedFormFactoryService.createForm({target: this.target, getDataFromAPIFunction: ()=>{this.loadResource()}, submitFormFunction: ()=>{this.submitForm()}, deleteFormFunction: ()=>{this.deleteResource()}, currentFormAction: this.currentAction, dataToCreatePage: JSONDictionary, formOption: JSONDictionary.config.isFormStepper ? "stepperForm" : null, resourceForm: this.resourceForm, secondaryFormClassName: null })
     }); 
   } 
 

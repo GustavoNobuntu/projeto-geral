@@ -128,7 +128,9 @@ export class DinamicBaseResourceFormComponent implements AfterViewInit {
         var apiUrl = this.dataToCreatePage["attributes"].find((attribute)=> attribute["name"] == this.className)["apiUrl"];
         this.resourceService.apiPath = environment.backendUrl+'/'+apiUrl;
 
-        this.generatedFormFactoryService.getDataToCreateFrom(this.dataToCreatePage, this.target, () => { this.loadForm() }, this.resourceForm, () => { this.submitForm() }, () => { this.deleteResource() }, this.currentAction, this.className);
+        // this.generatedFormFactoryService.getDataToCreateFrom(, this.target, () => { this.loadForm() }, this.resourceForm, () => { this.submitForm() }, () => { this.deleteResource() }, this.currentAction, this.className);
+        this.generatedFormFactoryService.createForm({target: this.target, getDataFromAPIFunction: ()=>{this.loadResource()}, submitFormFunction: ()=>{this.submitForm()}, deleteFormFunction: ()=>{this.deleteResource()}, currentFormAction: this.currentAction, dataToCreatePage: this.dataToCreatePage, formOption: null, resourceForm: this.resourceForm, secondaryFormClassName: this.className })
+  
       } else {
 
         // this.formGeneratorService.getJSONFromDicionario(this.JSONPath).subscribe((JSONDictionary: any) => {

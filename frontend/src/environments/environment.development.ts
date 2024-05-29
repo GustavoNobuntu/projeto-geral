@@ -2,22 +2,16 @@ export const environment = {
     applicationTitle: 'NadirDigital',
 
     backendUrl: "http://localhost:8080",
-    frontEndUrl: "https://localhost:4200",
+    frontendUrl: "https://localhost:4200",
     
     menuPath: "assets/dicionario/menu/menu.json",
-
-    // Dados Relacionados ao Azure AD B2C
-    // authority: 'https://allystore.b2clogin.com/b46b5b87-a08e-487b-ae9b-fec172a9a90b/v2.0/',//app-jef-cloud
-    // client_id:'aa90beb3-3aca-45aa-991a-e70d3ee59708', //app-jef-cloud
 
     authority: 'https://allystore.b2clogin.com/b46b5b87-a08e-487b-ae9b-fec172a9a90b/b2c_1_entradaEcadastro/v2.0/',
     client_id:'46513151-51f8-4912-8051-8de83c3ef9ed', //app-jef '46513151-51f8-4912-8051-8de83c3ef9ed'
     redirect_uri: 'callback',//app-jef
     post_logout_redirect_uri: 'logout',//app-jef
     scope: 'https://allystore.onmicrosoft.com/46513151-51f8-4912-8051-8de83c3ef9ed/test.read openid',//app-jef
-    
-    // scope: 'https://allystore.onmicrosoft.com/aa90beb3-3aca-45aa-991a-e70d3ee59708/test.read openid',//app-jef-cloud
-    
+  
     tenant_id: 'b46b5b87-a08e-487b-ae9b-fec172a9a90b',
     provider: 'allystore.b2clogin.com',
 

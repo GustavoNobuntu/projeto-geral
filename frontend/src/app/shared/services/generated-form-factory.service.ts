@@ -1,4 +1,4 @@
-import { Injectable, Injector, ViewContainerRef } from '@angular/core';
+import { Injectable, ViewContainerRef } from '@angular/core';
 import { GeneratedSimpleFormComponent } from '../components/generated-simple-form/generated-simple-form.component';
 import { GeneratedStepperFormComponent } from '../components/generated-stepper-form/generated-stepper-form.component';
 import { FormGeneratorService } from './form-generator.service';
@@ -45,33 +45,6 @@ export class GeneratedFormFactoryService {
   constructor(
     private formGeneratorService: FormGeneratorService,
   ) {}
-
-  /**
-   * Obtem dados base pra decidir qual tipo de formulário será criado
-   * @param JSONDictionary 
-   * @param target 
-   * @param getDataFromAPIFunction 
-   * @param resourceForm 
-   * @param submitFormFunction 
-   * @param deleteFormFunction 
-   * @param currentFormAction 
-   */
-  getDataToCreateFrom(JSONDictionary: any, target: ViewContainerRef, getDataFromAPIFunction: () => void, resourceForm: FormGroup, submitFormFunction: () => void, deleteFormFunction: () => void, currentFormAction: string, secondaryFormClassName?: string) {
-
-    const createFormParams: ICreateFormParams = {
-      target: target,
-      getDataFromAPIFunction: getDataFromAPIFunction,
-      resourceForm: resourceForm,
-      formOption: JSONDictionary.config.isFormStepper ? "stepperForm" : null,
-      submitFormFunction: submitFormFunction,
-      deleteFormFunction: deleteFormFunction,
-      currentFormAction: currentFormAction,
-      dataToCreatePage: JSONDictionary,
-      secondaryFormClassName: secondaryFormClassName
-    }
-
-    this.createForm(createFormParams);
-  }
 
   /**
    * 

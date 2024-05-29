@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, Injector, OnDestroy, ViewChild, ViewContainerRef } from "@angular/core"; 
 import { TipoPagamento } from "app/modules/tipo-pagamento/shared/tipo-pagamento.model"; 
 import { TipoPagamentoService } from "../shared/tipo-pagamento.service"; 
-import { ActivatedRoute, Router } from '@angular/router';
 import { BaseResourceFormComponent } from "app/shared/components/form/form.component";  
 import { FormGeneratorService } from "app/shared/services/form-generator.service";  
 import { GeneratedFormFactoryService } from "app/shared/services/generated-form-factory.service";  
@@ -37,7 +36,7 @@ export class TipoPagamentoFormComponent extends BaseResourceFormComponent<TipoPa
   ngAfterViewInit(): void { 
     this.formGeneratorService.getJSONFromDicionario(this.JSONPath).pipe(takeUntil(this.ngUnsubscribe)).subscribe((JSONDictionary: any) => {
 
-      this.generatedFormFactoryService.getDataToCreateFrom(JSONDictionary, this.target, ()=>{this.getDataFromAPI()}, this.resourceForm, ()=>{this.submitForm()}, ()=>{this.deleteResource()}, this.currentAction)
+      // this.generatedFormFactoryService.getDataToCreateFrom(JSONDictionary, this.target, ()=>{this.getDataFromAPI()}, this.resourceForm, ()=>{this.submitForm()}, ()=>{this.deleteResource()}, this.currentAction)
     }); 
   } 
 
