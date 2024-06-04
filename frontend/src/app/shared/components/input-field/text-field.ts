@@ -8,7 +8,8 @@ export class TextField implements FormField {
     
     let createdComponent = createComponentData.target.createComponent(InputFieldComponent);
     createdComponent.instance.label = createComponentData.labelTittle;
-    createdComponent.instance.isRequired = true;
+    createdComponent.instance.isRequired = createComponentData.isRequired;
+    createdComponent.instance.isRequired = createComponentData.isRequired;
     createdComponent.instance.className = createComponentData.className;
     return createdComponent.instance.inputValue;
   }

@@ -8,6 +8,7 @@ export class DateField implements FormField {
 
     let createdComponent = createComponentData.target.createComponent(InputDateFieldComponent);
     createdComponent.instance.label = createComponentData.labelTittle;
+    createdComponent.instance.isRequired = createComponentData.isRequired;
     createdComponent.instance.className = createComponentData.className;
     return createdComponent.instance.inputValue;
   }

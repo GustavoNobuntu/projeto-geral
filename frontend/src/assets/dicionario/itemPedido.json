@@ -3,7 +3,7 @@
         "modified": "2024-03-28T05:29:44.125203Z", 
         "description": "Item Pedido",  
         "name": "ItemPedido", 
-        "apiUrl": "http://localhost:8080/api/itemPedido",
+        "apiUrl": "api/itemPedido",
         "route": "itemPedido",
         "localStorage": true,
         "filter": true, 

@@ -1,4 +1,3 @@
-import { ComponentType } from '@angular/cdk/portal';
 import { Injectable, Injector, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
@@ -6,35 +5,8 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { FormField } from '../models/form-field';
 import { DynamicFormFieldFactory } from '../models/dinamic-form-factory';
-import { IPageStructure } from '../models/pageStructure';
+import { IPageStructure, PageStructure } from '../models/pageStructure';
 
-interface dialogConfiguration {
-  width?: string,
-  height?: string,
-  maxWidth?: string,
-  maxHeight?: string,
-  panelClass?: string,
-  data?: any,
-}
-
-/**
- * Atributos principais de variável da classe do JSON que informa como criar as telas
- * @param JSONDictionary JSON que informa como criar as telas
- * @param name - nome da variável.
- * @param type - tipo da variável.
- * @param formTab - informação de para qual aba do formTab essa variável pertence.
- * @param apiUrl link para chamar a classe dessa variável.
- * @param propertiesAttributes Se a variável for uma classe, retorná um vetor com variavel com nome e tipo das variáveis que contém na classe).
- * @param fieldDisplayedInLabel Nome da variável que será apresentado na label
- */
-export interface IAttributesToCreateScreens {
-  name: string,
-  type: string,
-  formTab: string,
-  apiUrl?: string,
-  propertiesAttributes?: any[],
-  fieldDisplayedInLabel: string
-}
 
 /**
   * Dados que irão criar um campo que irá compor o formulário
@@ -55,9 +27,10 @@ export interface ICreateComponentParams {
   className: string,
   fieldName: string,
   fieldType: string,
+  isRequired: boolean,
   value,
   labelTittle: string,
-  dataToCreatePage: object,
+  dataToCreatePage: PageStructure,
   fieldDisplayedInLabel: string,
   valuesList: any[]
 }
@@ -87,7 +60,6 @@ export class FormGeneratorService {
     });
   }
 
-  //TODO remover código repetitivo
   createComponent(
     createComponentData: ICreateComponentParams
   ) {
@@ -101,67 +73,7 @@ export class FormGeneratorService {
     createComponentData.resourceForm.addControl(createComponentData.fieldName,formField.createFormField(createComponentData));
   }
 
-  openDialog(component: ComponentType<any>, dialogConfiguration: dialogConfiguration) {
-    return this.matDialog.open(component, dialogConfiguration);
-  }
-
-  printForm(resourceForm: FormGroup) {
-    console.log(resourceForm.value);
-  }
-
-  /**
-  * Obtem os atributos principais das variáveis da classe do JSON que informa como criar as telas.
-  * @param JSONDictionary Dados do JSON que irá orientar a criação das telas.
-  * @returns Array com os atributos que irão orientar na criação das telas.
-  */
-  getAttributesData(JSONDictionary): IAttributesToCreateScreens[] {
-    if (JSONDictionary == null) return;
-
-    let attributes: IAttributesToCreateScreens[] = [];
-
-    JSONDictionary.attributes.forEach(element => {
-      let propertiesAttributes = [];
-      let apiUrl = null;
-      let className = null;
-      let fieldDisplayedInLabel: string | null = null;
-
-      if (element.hasOwnProperty('apiUrl') == true) {
-        apiUrl = element.apiUrl;
-      }
-
-      if (element.hasOwnProperty('type') && element.type === "foreignKey" && element.hasOwnProperty('fieldDisplayedInLabel')) {
-        fieldDisplayedInLabel = element.fieldDisplayedInLabel;
-      }
-
-      if (element.hasOwnProperty('properties') == true) {
-
-        element.properties.forEach(attribute => {
-          if (attribute.hasOwnProperty('name') && attribute.hasOwnProperty('type')) {
-            propertiesAttributes.push({ name: attribute.name, type: attribute.type });
-          }
-        });
-      }
-
-      attributes.push(
-        {
-          name: element.name,
-          type: element.type,
-          formTab: element.formTab,
-          apiUrl: apiUrl,
-          propertiesAttributes: propertiesAttributes,
-          fieldDisplayedInLabel: element.fieldDisplayedInLabel != null ? element.fieldDisplayedInLabel : null
-        });
-    });
-
-    return attributes;
-  }
-
-  getConfig(JSONDictionary): any {
-    if (JSONDictionary == null) return;
-
-    return JSONDictionary.config;
-  }
-
+  //TODO remover essa função
   getFormStepperStructure(JSONDictionary): string[] {
 
     if (!JSONDictionary.hasOwnProperty('config') &&

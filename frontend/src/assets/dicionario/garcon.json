@@ -3,7 +3,7 @@
         "modified": "2024-03-28T05:29:26.004328Z", 
         "description": "Garçon",  
         "name": "Garcon", 
-        "apiUrl": "http://localhost:8080/api/garcon",
+        "apiUrl": "api/garcon",
         "route": "garcon",
         "localStorage": true,
         "filter": true, 

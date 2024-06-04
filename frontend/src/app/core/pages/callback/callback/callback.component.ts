@@ -77,6 +77,8 @@ export class CallbackComponent implements OnInit {
     window.localStorage.removeItem("redirectURL");
     if (redirectURL) {
       this.router.navigate([redirectURL]);
+    } else {
+      this.router.navigate(['/']);
     }
   }
 

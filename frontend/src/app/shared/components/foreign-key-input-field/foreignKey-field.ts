@@ -8,6 +8,7 @@ export class ForeignKeyField implements FormField {
 
         let createdComponent = createComponentData.target.createComponent(ForeignKeyInputFieldComponent);
         createdComponent.instance.label = createComponentData.labelTittle;
+        createdComponent.instance.isRequired = createComponentData.isRequired;
         createdComponent.instance.fieldName = createComponentData.fieldName;
         createdComponent.instance.value = createComponentData.value;
         createdComponent.instance.dataToCreatePage = createComponentData.dataToCreatePage;

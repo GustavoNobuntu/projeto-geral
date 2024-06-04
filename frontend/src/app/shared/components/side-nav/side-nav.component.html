@@ -4,7 +4,7 @@
         <mat-toolbar>{{menuTitle}}</mat-toolbar>
         <mat-nav-list>
             <a mat-list-item style="display: flex; flex-direction: column; align-content: center;"
-                *ngFor="let option of navListOptions" [routerLink]="option.routeUrl" (mouseup)="closeSideNavBar()">
+                *ngFor="let option of navListOptions" [routerLink]="option.routeUrl">
 
                 <mat-icon style="display: block; margin: auto;" svgIcon="feather:box"></mat-icon>
                 <ng-container *transloco="let t">
@@ -17,10 +17,11 @@
     <mat-sidenav-content>
 
         <mat-toolbar id="toolbar">
-            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="showSideNavBar()"
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.open()"
                 *ngIf="canCloseNavBar">
                 <mat-icon aria-label="Side nav toggle icon" svgIcon="feather:menu"></mat-icon>
             </button>
+
             <span>{{applicationTitle}}</span>
 
             <div>

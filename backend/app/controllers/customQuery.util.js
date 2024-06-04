@@ -13,7 +13,6 @@ async function findDataByCustomQuery(filterValues, filterConditions, mongooseMod
         && filterValue.variableInfo.name != null
         && filterValue.variableInfo.type != null) {
 
-
         if (filterValue.filterParameter.hasOwnProperty('value') && !filterValue.filterParameter.value.hasOwnProperty('start')) {
           newQuery = createQueryBasedToType(filterValue.variableInfo.type, filterValue.filterParameter.parameter, filterValue.filterParameter.value, null, filterValue.variableInfo.name, 'i');
         } else {

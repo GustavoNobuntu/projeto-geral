@@ -29,11 +29,11 @@ export class NumberField implements FormField {
 
     let createdComponent = createComponentData.target.createComponent(InputFieldComponent);
     createdComponent.instance.label = createComponentData.labelTittle;
+    createdComponent.instance.isRequired = createComponentData.isRequired;
     createdComponent.instance.svgIcon = "heroicons_solid:calculator";
-    createdComponent.instance.isRequired = true;
     createdComponent.instance.iconPosition = "start";
     createdComponent.instance.mask = "0*,0*";
-    createdComponent.instance.actionOnClickInIcon = () => { this.openDialog(CalculatorComponent, null) }
+    createdComponent.instance.actionOnClickInIcon = () => { this.openDialog(CalculatorComponent, {data: {formData: createdComponent.instance.inputValue.value}}) }
     createdComponent.instance.className = createComponentData.className;
     return createdComponent.instance.inputValue;
   }

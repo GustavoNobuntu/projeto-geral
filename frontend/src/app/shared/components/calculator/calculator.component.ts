@@ -1,4 +1,4 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, Optional } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { TranslocoService } from '@ngneat/transloco';
 import { Subject, takeUntil } from 'rxjs';
@@ -37,7 +37,13 @@ export class CalculatorComponent implements OnInit, OnDestroy {
   constructor(
     private translocoService: TranslocoService,
     public dialogCalculatorRef: MatDialogRef<CalculatorComponent>,
-    ){}
+    @Optional() @Inject(MAT_DIALOG_DATA) public dialogInjectorData,
+    ){
+      if(dialogCalculatorRef != null){
+        console.log("O valor que o usuário digitava no formulário era: ", dialogInjectorData.formData);
+      }
+
+    }
 
   ngOnInit(): void {
     this.subscribeChangeLanguageEvent(this.translocoService);

@@ -3,7 +3,7 @@
         "modified": "2024-03-28T05:28:31.357506Z", 
         "description": "Categoria",  
         "name": "Categoria", 
-        "apiUrl": "http://localhost:8080/api/categoria",
+        "apiUrl": "api/categoria",
         "route": "categoria",
         "localStorage": true,
         "filter": true, 

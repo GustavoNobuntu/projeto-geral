@@ -12,9 +12,9 @@
             "clientes"
         ],
         "addNew": true,
-        "edit": true,
+        "edit": false,
         "columnsQuantity": 3,
-        "delete": true,
+        "delete": false,
         "isFormStepper": false,
         "isLinearFormStepper": false
     },

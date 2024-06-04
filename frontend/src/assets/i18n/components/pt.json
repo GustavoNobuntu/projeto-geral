@@ -42,7 +42,7 @@
         "endWith": "Termina Com...",
         "contains": "Contém...",
         "dontContains": "Não Contém...",
-        "match":"Combina com.."
+        "match": "Combina com.."
     },
     "filter-number-component": {
         "operation": "Operação",
@@ -82,31 +82,37 @@
         "rememberToSave": "Tem certeza de que deseja sair? Suas alterações podem não ser salvas",
         "deselectMessage": "Os itens foram removido da seleção"
     },
+    "requestError": {
+        "error-401": "Você não tenho permissão para obter os dados",
+        "error-403": "Acesso proibido ao recurso solicitado",
+        "error-404": "O recurso solicitado não foi encontrado",
+        "error-500": "Erro interno do servidor, por favor, tente novamente mais tarde"
+    },
     "foreign-key-input-field": {
         "search": "Pesquisar",
         "add": "Adicionar",
         "edit": "Alterar",
         "clean": "Limpar"
     },
-    "confirmation-dialog":{
-        "title":"Confirmar",
-        "messageToConfirmDelete":"Você tem certeza que deseja remover este item permanentemente?",
-        "confirm":"Sim",
-        "cancel":"Não"
+    "confirmation-dialog": {
+        "title": "Confirmar",
+        "messageToConfirmDelete": "Você tem certeza que deseja remover este item permanentemente?",
+        "confirm": "Sim",
+        "cancel": "Não"
     },
-    "default-list":{
-        "noData":"Sem dados na lista"
+    "default-list": {
+        "noData": "Sem dados na lista"
     },
-    "selector-input-field":{
+    "selector-input-field": {
         "other": "outro",
         "others": "outros"
     },
-    "auth-callback-page":{
-        "authentication-error-clientId-missmatch":"Esta aplicação não tem permissão de acesso ao provedor de identidade do domínio. Consulte o administrador da aplicação.",
-        "redirect-to-callback":"Redirecionando para a última página.."
+    "auth-callback-page": {
+        "authentication-error-clientId-missmatch": "Esta aplicação não tem permissão de acesso ao provedor de identidade do domínio. Consulte o administrador da aplicação.",
+        "redirect-to-callback": "Redirecionando para a última página.."
     },
-    "auth-signin-page":{
-        "authentication-error-redirect-to-signin":"Esta aplicação não tem permissão de acesso ao provedor de identidade do domínio. Consulte o administrador da aplicação.",
-        "redirect-to-signin":"Redirecionar para a página de inscrição"
+    "auth-signin-page": {
+        "authentication-error-redirect-to-signin": "Esta aplicação não tem permissão de acesso ao provedor de identidade do domínio. Consulte o administrador da aplicação.",
+        "redirect-to-signin": "Redirecionar para a página de inscrição"
     }
 }

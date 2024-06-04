@@ -90,16 +90,6 @@ export class SideNavComponent implements OnInit, OnDestroy {
     this.showLogOutButton();
   }
 
-  showSideNavBar() {
-    this.sideNavBarIsOpened = true;
-  }
-
-  closeSideNavBar() {
-    if (this.canCloseNavBar == true) {
-      this.sideNavBarIsOpened = false;
-    }
-  }
-
   /**
    * Obtem dados do JSON para contrução do menu de navegação da aplicação
    * @param JSONMenuPath Caminho onde se encontra o JSON que irá obter as informações para contrução do menu de navegação. @example "/assets/dicionario/menu.json"

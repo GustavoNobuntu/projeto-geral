@@ -80,6 +80,12 @@
         "rememberToSave": "Are you sure you want to exit? Your changes may not be saved",
         "deselectMessage": "The items have been removed from the selection"
     },
+    "requestError":{
+        "error-401": "You don't have permission to get data",
+        "error-403": "Access is forbidden to the requested resource",
+        "error-404": "The requested resource was not found",
+        "error-500": "Internal server error, please try again later"
+    },
     "foreign-key-input-field": {
         "search": "Search",
         "add": "Add",

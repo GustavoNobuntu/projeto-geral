@@ -1,6 +1,6 @@
 export interface IPageStructure {
   config: IPageStructureConfig;
-  attributes: IPageStructureAttributes[];
+  attributes: IPageStructureAttribute[];
   
 }
 
@@ -12,7 +12,7 @@ export interface IPageStructureConfig {
   route: string;
   localStorage: boolean;
   filter: boolean;
-  searchableFields: string[];
+  searchableFields: ISearchableField[];
   addNew: boolean;
   edit: boolean;
   columnsQuantity: number;
@@ -21,9 +21,15 @@ export interface IPageStructureConfig {
   isLinearFormStepper: boolean;
 }
 
-export interface IPageStructureAttributes {
+export interface ISearchableField {
+  name: string,
+  type: string
+}
+
+export interface IPageStructureAttribute {
   name: string;
   type: string;
+  isRequired: boolean,
   className: string;
   many: boolean;
   apiUrl: string;
@@ -39,6 +45,7 @@ export interface IPageStructureAttributes {
   addNew: boolean;
   properties: IPageStructureAttributesProperties[];
   visibleForm: boolean;
+  formTab: string;
 }
 
 export interface IPageStructureAttributesProperties {
@@ -53,7 +60,7 @@ export interface IPageStructureAttributesProperties {
 
 export class PageStructure implements IPageStructure {
   config: IPageStructureConfig;
-  attributes: IPageStructureAttributes[];
+  attributes: IPageStructureAttribute[];
 
   constructor(data: IPageStructure) {
     

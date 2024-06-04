@@ -10,6 +10,7 @@ export class SelectorField implements FormField {
         const component = createdComponent.instance;
 
         component.label = createComponentData.labelTittle;
+        // createdComponent.instance.isRequired = createComponentData.isRequired;// TODO adicionar campo se é requerido ou não
         //TODO esses valore serão pegos pela API
         // component.apiUrl = "http://localhost:8080/api/clientes";
         component.apiUrl = createComponentData.value.apiUrl;

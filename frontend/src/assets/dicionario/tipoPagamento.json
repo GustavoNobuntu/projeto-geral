@@ -3,7 +3,7 @@
         "modified": "2024-03-28T05:31:10.073885Z", 
         "description": "Tipo do Pagamento",  
         "name": "TipoPagamento", 
-        "apiUrl": "http://localhost:8080/api/tipoPagamento",
+        "apiUrl": "api/tipoPagamento",
         "route": "tipoPagamento",
         "localStorage": true,
         "filter": true, 
