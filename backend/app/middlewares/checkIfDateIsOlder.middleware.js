@@ -2,57 +2,57 @@
  * Verifica se o item que está sendo alterado é de uma versão mais recente ou está sendo alterado algo que já foi alterado.
  * Quando se é alterado algum registro no banco, é preciso que seja enviado pelo corpo da requisição o campo "updatedAt". 
  * Essa variável informa a data da ultima atualização do registro que foi alterado no backEnd 
+ * @param {*} objectId ID do objeto que será alterado
+ * @param {*} updatedAt Data da alteração do item que vai ser alterado
  * @param {*} mongooseModel Modelo da Classe no mongoDb
  * @returns 
  */
-const checkIfDateIsOlder = (mongooseModel) => async (req, res, next) => {
+async function hasUpdateConflict(objectId, updatedAt, mongooseModel) {
 
-  //Verifica se tem corpo e id do objeto que será alterado
-  if (!req.body || !req.body.id) {
-    res.status(400).json({ message: 'Nenhum valor foi recebido' });
-    return;
+  if (!objectId) {
+    return Error("Don't contains objectID");
   }
 
   try {
-    const documentId = req.body.id;
+    const documentId = objectId;
     //Procura o objeto que será alterado no banco de dados
     const storedDocument = await mongooseModel.findById(documentId);
 
     //Verifica se encontra o item que vai ser alterado no banco de dados
     if (!storedDocument) {
-      return res.status(404).json({ message: 'Documento não encontrado' });
+      return Error("Document not found");
     }
 
     //Se item não contem data de atualização, permita a alteração
     if (storedDocument.updatedAt == null) {
-      next();
-      return;
+      return false;
     }
-
     const storedDateUpdateDate = new Date(storedDocument.updatedAt);
 
     if (!storedDateUpdateDate) {
-      next();
-      return;
+      return false;
     }
 
     //Se não obtiver dados da data de atualização do item que está sendo alterado pelo usuário, não permitir alteração
-    if (!req.body.updatedAt) {
-      res.status(400).json({ message: 'Valor recebido não contém informação de quando foi alterado' });
-      return;
+    if (updatedAt == null) {
+      return false;
     }
 
-    const updatedItemUpdateDate = new Date(req.body.updatedAt);
-
+    const updatedItemUpdateDate = new Date(updatedAt);
     if (updatedItemUpdateDate.toISOString() === storedDateUpdateDate.toISOString()) {
-      next();
+      return false;
     } else {
-      res.status(401).json({ message: 'Não é permitido realizar operação. Valor recebido é mais antigo que o valor atual armazenado' });
+      return true;
     }
 
   } catch (error) {
-    res.status(500).json({ message: 'Internal Server Error: ' + error });
+    return Error('Internal Server Error', error);
   }
 }
 
-module.exports = checkIfDateIsOlder;
+//Declaração das funções que serão exportadas
+const checkIfDateIsOlderFunctions = {
+  hasUpdateConflict
+};
+
+module.exports = checkIfDateIsOlderFunctions;

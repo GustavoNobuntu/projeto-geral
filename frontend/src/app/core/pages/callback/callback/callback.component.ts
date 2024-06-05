@@ -30,7 +30,7 @@ export class CallbackComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     await this.authService.completeAuthentication().catch((returnedValue)=>{
       this.pageState = CallbackPageState.Error;
-      console.log(returnedValue);
+      // console.log(returnedValue);
     });
 
     const user: User = {

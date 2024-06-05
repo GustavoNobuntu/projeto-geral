@@ -1,6 +1,6 @@
 module.exports = app => {
     const user = require("../app/controllers/user.controller.js"); 
-    const checkIfDateIsOlder = require("../app/middlewares/checkIfDateIsOlder.middleware.js"); 
+    
     const verifyAccess = require("../app/middlewares/auth.middleware.js");
     const db = require("../models/index.js"); 
     const User = db.user; 
@@ -16,7 +16,7 @@ module.exports = app => {
     // Retrieve a single user with id 
     router.get("/:id", verifyAccess.verifyAccess, user.findOne); 
     // Update a user with id 
-    router.put("/:id", verifyAccess.verifyAccess, checkIfDateIsOlder(User), user.update); 
+    router.put("/:id", verifyAccess.verifyAccess, user.update); 
     // Delete a user with id 
     router.delete("/:id", verifyAccess.verifyAccess, user.delete); 
     // Custom get user 

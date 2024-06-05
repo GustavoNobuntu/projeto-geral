@@ -1,5 +1,5 @@
 const db = require("../../models");
-const User = db.user;
+const User = db.db;
 const findDataByCustomQuery = require("./customQuery.util");
 const getSchemaRefs = require("../../utils/populate.utils");
 
@@ -132,10 +132,10 @@ exports.findOne = (req, res) => {
 exports.findOneByUID = (req, res) => {
   const UID = req.params.uid;
 
-  let populate = getSchemaRefs(db.user.schema.obj);
+  let populate = getSchemaRefs(User(req.databaseConnection).schema.obj);
 
   // Se houver referências estrangeiras fazer o populate 
-  let query = User.findOne({ UID: UID });
+  let query = User(req.databaseConnection).findOne({ UID: UID });
   if (populate.length > 0) {
     query = query.populate(populate.join(" "));
   }
@@ -147,7 +147,7 @@ exports.findOneByUID = (req, res) => {
       res.status(200).send(data);
     }
   }).catch(err => {
-    res.status(500).send({ message: "Erro ao buscar User com o uid=" + UID });
+    res.status(500).send({ message: "Erro ao buscar User com o uid=" + UID + err });
   });
 };
 

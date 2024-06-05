@@ -1,6 +1,6 @@
 module.exports = app => {
     const produto = require("../app/controllers/produto.controller.js"); 
-    const checkIfDateIsOlder = require("../app/middlewares/checkIfDateIsOlder.middleware.js"); 
+    
 
     const db = require("../models/index.js"); 
     const Produto = db.produto; 
@@ -14,7 +14,7 @@ module.exports = app => {
     // Retrieve a single Produto with id 
     router.get("/:id", produto.findOne); 
     // Update a Produto with id 
-    router.put("/:id", checkIfDateIsOlder(Produto), produto.update); 
+    router.put("/:id", produto.update); 
     // Delete a Produto with id 
     router.delete("/:id", produto.delete); 
     // Create a new Produto 

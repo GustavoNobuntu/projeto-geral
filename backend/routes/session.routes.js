@@ -1,6 +1,6 @@
 module.exports = app => {
     const session = require("../app/controllers/session.controller.js"); 
-    const checkIfDateIsOlder = require("../app/middlewares/checkIfDateIsOlder.middleware.js"); 
+    
     const verifyAccess = require("../app/middlewares/auth.middleware.js");
     const db = require("../models/index.js"); 
     const Session = db.session; 
@@ -14,7 +14,7 @@ module.exports = app => {
     // Retrieve a single Session with id 
     router.get("/:id", verifyAccess.verifyAccess, session.findOne); 
     // Update a Session with id 
-    router.put("/:id", verifyAccess.verifyAccess, checkIfDateIsOlder(Session), session.update); 
+    router.put("/:id", verifyAccess.verifyAccess, session.update); 
     // Delete a Session with id 
     router.delete("/:id", verifyAccess.verifyAccess, session.delete); 
     // Custom get Session 

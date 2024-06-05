@@ -5,7 +5,7 @@ import { DefaultListComponent, IDefaultListComponentDialogConfig } from '../defa
 import { Subject, take, takeUntil } from 'rxjs';
 import { SelectedItemsListComponent } from '../selected-items-list/selected-items-list.component';
 import { DinamicBaseResourceFormComponent, IDinamicBaseResourceFormComponent } from '../dinamic-base-resource-form/dinamic-base-resource-form.component';
-import { IPageStructure } from 'app/shared/models/pageStructure';
+import { IPageStructure, ISearchableField } from 'app/shared/models/pageStructure';
 
 enum ISelectionOption {
   add,
@@ -169,7 +169,7 @@ export class ForeignKeyInputFieldComponent implements OnDestroy, AfterViewInit {
       userConfig: null,
       selectedItemsLimit: this.selectedItemsLimit,
       apiUrl: this.value.apiUrl,
-      searchableFields: this.dataToCreatePage.config.searchableFields,
+      searchableFields: this.getSearchableFields(this.dataToCreatePage, this.className),
       isSelectable: true,
       className: this.fieldName,//É fieldName pois aqui será editado a campo que está na classe do ClasNa
       isAbleToCreate: false,
@@ -362,6 +362,20 @@ export class ForeignKeyInputFieldComponent implements OnDestroy, AfterViewInit {
       }
     }
     return null; // Se não houver nenhuma chave além de 'id'
+  }
+
+  getSearchableFields(dataToCreatePage: IPageStructure, className: string): ISearchableField[]{
+    var _searchableFields : ISearchableField[] = [];
+
+    var attribute = dataToCreatePage.attributes.find(attribute => attribute.name === className);
+
+    attribute.searchable.map(searchableField =>{
+
+      var propertie = attribute.properties.find(propertie => propertie.name === searchableField);
+      _searchableFields.push({name: searchableField, type: propertie.type}) 
+    });
+
+    return _searchableFields;
   }
 
 }

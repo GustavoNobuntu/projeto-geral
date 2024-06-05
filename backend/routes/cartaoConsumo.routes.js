@@ -1,24 +1,20 @@
 
 module.exports = app => {
   const { verifyAccess } = require("../app/middlewares/auth.middleware");
-  const authJwt = require("../app/middlewares/auth.middleware.js");
-  
   const cartaoConsumo = require("../app/controllers/cartaoConsumo.controller.js");
-  const checkIfDateIsOlder = require("../app/middlewares/checkIfDateIsOlder.middleware.js");
-
+  // const authJwt = require("../app/middlewares/auth.middleware.js");
   const db = require("../models/index.js");
-  const CartaoConsumo = db.cartaoConsumo;
+  // const CartaoConsumo = db.cartaoConsumo(router.require.databaseConnection);
 
   var router = require("express").Router();
-
   // Create a new CartaoConsumo 
-  router.post("/", verifyAccess ,cartaoConsumo.create);
+  router.post("/", verifyAccess, cartaoConsumo.create);
   // router.get("/", [authJwt.verifyToken, authJwt.isAuthorized], cartaoConsumo.findAll);
-  router.get("/", verifyAccess, cartaoConsumo.findAll);
+  router.get("/", cartaoConsumo.findAll);
   // Retrieve a single CartaoConsumo with id
   router.get("/:id",verifyAccess ,cartaoConsumo.findOne);
   // Update a CartaoConsumo with id 
-  router.patch("/:id", [verifyAccess ,checkIfDateIsOlder(CartaoConsumo)], cartaoConsumo.update);
+  router.patch("/:id", verifyAccess, cartaoConsumo.update);
   // Delete a CartaoConsumo with id 
   router.delete("/:id" ,cartaoConsumo.delete);
   // Custom Search

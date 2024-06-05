@@ -1,6 +1,6 @@
 module.exports = app => {
     const opcional = require("../app/controllers/opcional.controller.js"); 
-    const checkIfDateIsOlder = require("../app/middlewares/checkIfDateIsOlder.middleware.js"); 
+    
 
     const db = require("../models/index.js"); 
     const Opcional = db.opcional; 
@@ -14,7 +14,7 @@ module.exports = app => {
     // Retrieve a single Opcional with id 
     router.get("/:id", opcional.findOne); 
     // Update a Opcional with id 
-    router.put("/:id", checkIfDateIsOlder(Opcional), opcional.update); 
+    router.put("/:id", opcional.update); 
     // Delete a Opcional with id 
     router.delete("/:id", opcional.delete); 
     // Create a new Opcional 

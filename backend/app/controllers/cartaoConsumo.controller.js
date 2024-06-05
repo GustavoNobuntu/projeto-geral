@@ -2,6 +2,7 @@ const db = require("../../models");
 const getSchemaRefs = require("../../utils/populate.utils");
 const CartaoConsumo = db.cartaoConsumo;
 const findDataByCustomQuery = require("./customQuery.util");
+const checkIfDateIsOlderFunctions = require("../middlewares/checkIfDateIsOlder.middleware");
 
 validaCamposRequeridosCartaoConsumo = (req) => {
   const camposRequeridosEmpty = new Array();
@@ -30,10 +31,10 @@ exports.create = (req, res) => {
   }
 
   // Create a CartaoConsumo
-  const cartaoConsumo = new CartaoConsumo({
+  const cartaoConsumo = req.databaseConnection.cartaoConsumo({
     numeroCartao: req.body.numeroCartao ? req.body.numeroCartao : null,
     clientes: req.body.clientes ? req.body.clientes : null
-  });
+  })
 
   // Save CartaoConsumo in the database
   cartaoConsumo
@@ -51,8 +52,9 @@ exports.create = (req, res) => {
 
 // Procura por todas as entidades do tipo CartaoConsumo
 exports.findAll = (req, res) => {
-  let populate = getSchemaRefs(db.cartaoConsumo.schema.obj);
-  let query = CartaoConsumo.find();
+
+  let populate = getSchemaRefs(req.databaseConnection.cartaoConsumo.schema.obj);
+  let query = req.databaseConnection.cartaoConsumo.find();
 
   if (populate.length > 0) {
     query = query.populate(populate.join(" "));
@@ -67,14 +69,15 @@ exports.findAll = (req, res) => {
           err.message || "Algum erro desconhecido ocorreu ao buscar CartaoConsumo."
       });
     });
+ 
 };
 
 // Busca a entidade CartaoConsumo por id
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  let populate = getSchemaRefs(db.cartaoConsumo.schema.obj);
-  let query = CartaoConsumo.findOne({ _id: id });
+  let populate = getSchemaRefs(req.databaseConnection.cartaoConsumo.schema.obj);
+  let query = req.databaseConnection.cartaoConsumo.findOne({ _id: id });
 
   if (populate.length > 0) {
     query = query.populate(populate.join(" "));
@@ -92,7 +95,7 @@ exports.findOne = (req, res) => {
 };
 
 // Altera uma entidade CartaoConsumo
-exports.update = (req, res) => {
+exports.update = async (req, res) => {
 
   // Validate required fields
   const camposRequeridosEmpty = validaCamposRequeridosCartaoConsumo(req);
@@ -103,7 +106,11 @@ exports.update = (req, res) => {
 
   const id = req.params.id;
 
-  CartaoConsumo.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+  if(await checkIfDateIsOlderFunctions.hasUpdateConflict(id, req.body.updatedAt, req.databaseConnection.cartaoConsumo) == true){
+    return res.status(409).json({ message: 'Conflito de atualização. O documento foi alterado por outra transação.' });
+  }
+
+  req.databaseConnection.cartaoConsumo.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
     .then(data => {
       if (!data) {
         res.status(404).send({
@@ -124,7 +131,7 @@ exports.delete = (req, res) => {
 
   const id = req.params.id;
 
-  CartaoConsumo.findByIdAndDelete(id)
+  CartaoConsumo(req.databaseConnection).findByIdAndDelete(id)
     .then(data => {
       if (!data) {
         res.status(404).send({
@@ -147,7 +154,7 @@ exports.delete = (req, res) => {
 // Exclui todos os registros da entidade CartaoConsumo
 exports.deleteAll = (req, res) => {
 
-  CartaoConsumo.deleteMany({})
+  CartaoConsumo(req.databaseConnection).deleteMany({})
     .then(data => {
       res.send({
         message: `${data.deletedCount} ${data.deletedCount > 1 ? '' : 'CartaoConsumo'}  foram excluídas!`
@@ -165,13 +172,13 @@ exports.findCustom = async (req, res) => {
   const filterValues = req.body.filterValues;
   const filterConditions = req.body.filterValues;
 
-  findDataByCustomQuery(filterValues, filterConditions, CartaoConsumo).then(data => {
+  findDataByCustomQuery(filterValues, filterConditions, req.databaseConnection.cartaoConsumo).then(data => {
     res.status(200).send(data);
   })
-  .catch(error => {
-    res.status(500).send({
-      message:
-        error.message || "Algum erro desconhecido ocorreu ao buscar dados pela busca customizável"
+    .catch(error => {
+      res.status(500).send({
+        message:
+          error.message || "Algum erro desconhecido ocorreu ao buscar dados pela busca customizável"
+      });
     });
-  });
 };

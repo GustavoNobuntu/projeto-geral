@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken");
-const db = require("../../models");
 const axios = require("axios");
 const jwkToPem = require("jwk-to-pem");
 
@@ -23,7 +22,7 @@ async function getJWKS(jwksUri) {
 async function verifyAccess(req, res, next) {
 
   //Verifica se é publica, se for só passa
-  if (await isPublicRoute(req.method, req.originalUrl) == true) {
+  if (await isPublicRoute(req.method, req.originalUrl, req.databaseConnection) == true) {
     next();
     return;
   }
@@ -42,10 +41,9 @@ async function verifyAccess(req, res, next) {
       res.status(401).send({ message: "Acesso não autorizado" });
     } else {
       //Se tem o OID verifica se tem permissao pra rota
-      if (await isAuthorizedOnUrl(userOID, req.method, req.originalUrl) == true) {
+      if (await isAuthorizedOnUrl(userOID, req.method, req.originalUrl, req.databaseConnection) == true) {
         next();
       } else {
-        console.log("não é autorizado")
         res.status(401).send({ message: "Acesso não autorizado" });
       }
     }
@@ -108,15 +106,16 @@ async function verifyAccessTokenIsValid(access_token, res) {
  * @param {*} userOID Identificador do usuário
  * @param {*} _method Método. @example "GET", "POST"
  * @param {*} _url Url. @example "/produto"
+ * @param {*} _databaseConnection Conexão com o banco de dados do usuário
  * @returns 
  */
-async function isAuthorizedOnUrl(userOID, _method, _url) {
+async function isAuthorizedOnUrl(userOID, _method, _url, databaseConnection) {
 
-  if (await userIsAdmin(userOID) == true) {
+  if (await userIsAdmin(userOID, databaseConnection) == true) {
     return true;
   }
 
-  const user = await db.user.aggregate([
+  const user = await databaseConnection.user.aggregate([
     // Filtrar pelo UID do usuário
     { $match: { UID: userOID } },
     // Fazer o lookup para obter os detalhes das roles
@@ -182,10 +181,11 @@ async function isAuthorizedOnUrl(userOID, _method, _url) {
   return false;
 };
 
-async function userIsAdmin(userOID) {
+async function userIsAdmin(userOID, databaseConnection) {
+
   try {
     //É pego da API o usuário com base no OID
-    const _user = await db.user.findOne({ UID: userOID }).exec();
+    const _user = await databaseConnection.user.findOne({ UID: userOID }).exec();
 
     if (_user != null && _user.isAdministrator != null) {
       //Se o usuário é administrador
@@ -201,9 +201,9 @@ async function userIsAdmin(userOID) {
   }
 }
 
-async function isPublicRoute(_method, _url) {
+async function isPublicRoute(_method, _url, databaseConnection) {
 
-  const role = await db.roles.aggregate([
+  const role = await databaseConnection.role.aggregate([
     { $match: { name: "guest" } },
 
     {

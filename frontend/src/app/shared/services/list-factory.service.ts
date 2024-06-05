@@ -2,7 +2,7 @@ import { Injectable, ViewContainerRef } from '@angular/core';
 import { FormGeneratorService } from './form-generator.service';
 import { take } from 'rxjs';
 import { DefaultListComponent } from '../components/default-list/default-list.component';
-import { IPageStructure } from '../models/pageStructure';
+import { IPageStructure, ISearchableField } from '../models/pageStructure';
 
 // @Injectable()
 @Injectable({
@@ -34,12 +34,26 @@ export class ListFactoryService {
       createdComponent.fieldsType = pageData.attributes.map(attribute => attribute.type);
       createdComponent.isSelectable = pageData.config.edit;
       createdComponent.selectedItemsLimit = null;
-      createdComponent.searchableFields = pageData.config.searchableFields;
+      createdComponent.searchableFields = this.getSearchableFields(pageData);
       createdComponent.className = pageData.config.name;
       createdComponent.dataToCreatePage = pageData;
       createdComponent.objectDisplayedValue = pageData.attributes.map(attribute => attribute.fieldDisplayedInLabel);
       createdComponent.route = pageData.config.route;
     });
+  }
+
+  getSearchableFields(dataToCreatePage: IPageStructure): ISearchableField[]{
+    var _searchableFields : ISearchableField[] = [];
+
+    dataToCreatePage.config.searchableFields.map(searchableField =>{
+      //TODO percorrer as variáveis pra pegar os tipos
+      dataToCreatePage.attributes.map(attribute =>{
+        _searchableFields.push({name: searchableField, type: attribute.type}) 
+      })
+
+    })
+
+    return _searchableFields;
   }
 
 }

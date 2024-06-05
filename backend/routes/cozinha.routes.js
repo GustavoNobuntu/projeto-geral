@@ -1,6 +1,6 @@
 module.exports = app => {
     const cozinha = require("../app/controllers/cozinha.controller.js"); 
-    const checkIfDateIsOlder = require("../app/middlewares/checkIfDateIsOlder.middleware.js"); 
+    
 
     const db = require("../models/index.js"); 
     const Cozinha = db.cozinha; 
@@ -14,7 +14,7 @@ module.exports = app => {
     // Retrieve a single Cozinha with id 
     router.get("/:id", cozinha.findOne); 
     // Update a Cozinha with id 
-    router.put("/:id", checkIfDateIsOlder(Cozinha), cozinha.update); 
+    router.put("/:id", cozinha.update); 
     // Delete a Cozinha with id 
     router.delete("/:id", cozinha.delete); 
     // Create a new Cozinha 

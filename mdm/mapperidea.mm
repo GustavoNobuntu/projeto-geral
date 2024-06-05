@@ -525,7 +525,7 @@
 <node CREATED="1638535081653" ID="ID_1270652051" MODIFIED="1638535111940" TEXT="">
 <icon BUILTIN="tag_green"/>
 </node>
-<node CREATED="1638792774604" ID="ID_409213587" MODIFIED="1638793145665" TEXT="  const {{ @name }} = mongoose.model(&quot;{{ mi:first-lower(@name) }}&quot;, schema);">
+<node CREATED="1638792774604" ID="ID_409213587" MODIFIED="1638793145665" TEXT="  const {{ @name }} = mongooseConnection.model(&quot;{{ mi:first-lower(@name) }}&quot;, schema);">
 <icon BUILTIN="tag_green"/>
 </node>
 <node CREATED="1638535093573" ID="ID_825077252" MODIFIED="1638792911646" TEXT="  return {{ @name }};">

@@ -1,67 +1,74 @@
-const mongoose = require("mongoose"); 
-mongoose.Promise = global.Promise; 
-const db = {}; 
-db.mongoose = mongoose; 
+const mongoose = require("mongoose");
 
-//Declara CartaoConsumo
-db.cartaoConsumo = require("./cartaoConsumo.model.js")(mongoose); 
+async function connectionFactory(dbURI) {
+  const connection = await mongoose.createConnection(dbURI);
 
-//Declara Cliente
-db.clientes = require("./cliente.model.js")(mongoose); 
+  //Declara CartaoConsumo
+  connection.cartaoConsumo = require("./cartaoConsumo.model.js")(connection);
 
-//Declara CadastroCliente
-db.cadastroCliente = require("./cadastroCliente.model.js")(mongoose); 
+  //Declara Cliente
+  connection.clientes = require("./cliente.model.js")(connection);
 
-//Declara CartaoCliente
-db.cartaoCliente = require("./cartaoCliente.model.js")(mongoose); 
+  //Declara CadastroCliente
+  connection.cadastroCliente = require("./cadastroCliente.model.js")(connection);
 
-//Declara Categoria
-db.categoria = require("./categoria.model.js")(mongoose); 
+  //Declara CartaoCliente
+  connection.cartaoCliente = require("./cartaoCliente.model.js")(connection);
 
-//Declara Cozinha
-db.cozinha = require("./cozinha.model.js")(mongoose); 
+  //Declara Categoria
+  connection.categoria = require("./categoria.model.js")(connection);
 
-//Declara Endereco
-db.endereco = require("./endereco.model.js")(mongoose); 
+  //Declara Cozinha
+  connection.cozinha = require("./cozinha.model.js")(connection);
 
-//Declara Garcon
-db.garcon = require("./garcon.model.js")(mongoose); 
+  //Declara Endereco
+  connection.endereco = require("./endereco.model.js")(connection);
 
-//Declara ItemPedido
-db.itemPedido = require("./itemPedido.model.js")(mongoose); 
+  //Declara Garcon
+  connection.garcon = require("./garcon.model.js")(connection);
 
-//Declara Menu
-db.menu = require("./menu.model.js")(mongoose); 
+  //Declara ItemPedido
+  connection.itemPedido = require("./itemPedido.model.js")(connection);
 
-//Declara Opcional
-db.opcional = require("./opcional.model.js")(mongoose); 
+  //Declara Menu
+  connection.menu = require("./menu.model.js")(connection);
 
-//Declara Pagamento
-db.pagamento = require("./pagamento.model.js")(mongoose); 
+  //Declara Opcional
+  connection.opcional = require("./opcional.model.js")(connection);
 
-//Declara Pedido
-db.pedido = require("./pedido.model.js")(mongoose); 
+  //Declara Pagamento
+  connection.pagamento = require("./pagamento.model.js")(connection);
 
-//Declara Produto
-db.produto = require("./produto.model.js")(mongoose); 
+  //Declara Pedido
+  connection.pedido = require("./pedido.model.js")(connection);
 
-//Declara TipoPagamento
-db.tipoPagamento = require("./tipoPagamento.model.js")(mongoose); 
+  //Declara Produto
+  connection.produto = require("./produto.model.js")(connection);
 
-//ADICIONADO
+  //Declara TipoPagamento
+  connection.tipoPagamento = require("./tipoPagamento.model.js")(connection);
 
-//Declara Users
-db.user = require("./user.model.js")(mongoose); 
+  //Declara Users
+  connection.user = require("./user.model.js")(connection);
 
-//Declara Roles
-db.roles = require("./roles.model.js")(mongoose); 
+  //Declara Roles
+  connection.role = require("./role.model.js")(connection);
 
-//Declara FunctionsSystem
-db.functions_system = require("./functionsSystem.model.js")(mongoose); 
+  //Declara FunctionsSystem
+  connection.functions_system = require("./functionsSystem.model.js")(connection);
 
-//Declara FunctionsSystemRoles
-db.functions_system_roles = require("./functionsSystemRoles.model.js")(mongoose); 
+  //Declara FunctionsSystemRoles
+  connection.functions_system_roles = require("./functionsSystemRoles.model.js")(connection);
 
-db.session = require("./session.model.js")(mongoose);
+  connection.session = require("./session.model.js")(connection);
 
-module.exports = db;
+  connection.tenant = require("./tenant.model.js")(connection);
+
+  return connection;
+}
+
+const connectionFunctions = {
+  connectionFactory,
+};
+
+module.exports = connectionFunctions;

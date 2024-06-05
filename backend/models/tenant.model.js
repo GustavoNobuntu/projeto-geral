@@ -1,17 +1,15 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-module.exports = mongooseConnection => {
-
+module.exports = (mongooseConnection) => {
   // Verifica se o modelo já foi criado para a conexão específica (Toda vez que é feito a conexão nova ao banco de dados, é preciso setar os models, porém só pode fazer isso uma vez por conexão, se fizer mais de uma vez dá erro. Por isso é verificado se dentro dos models da conexão existe o model)
-  if (mongooseConnection.models.cliente) {
-    return mongooseConnection.models.cliente;
+  if (mongooseConnection.models.tenant) {
+    return mongooseConnection.models.tenant;
   }
 
   var schema = mongoose.Schema(
     {
-      nome: String,
-      telefone: Number
+      dbURI: String,
     },
     { timestamps: true }
   );
@@ -25,6 +23,6 @@ module.exports = mongooseConnection => {
     }
   });
 
-  const Cliente = mongooseConnection.model("cliente", schema);
-  return Cliente;
+  const Tenant = mongooseConnection.model("tenant", schema);
+  return Tenant;
 };

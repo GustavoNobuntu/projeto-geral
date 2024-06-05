@@ -1,6 +1,5 @@
 module.exports = app => {
     const cartaoCliente = require("../app/controllers/cartaoCliente.controller.js"); 
-    const checkIfDateIsOlder = require("../app/middlewares/checkIfDateIsOlder.middleware.js"); 
 
     const db = require("../models/index.js"); 
     const CartaoCliente = db.cartaoCliente; 
@@ -18,7 +17,7 @@ module.exports = app => {
     router.get("/:id", cartaoCliente.findOne); 
     // Update a CartaoCliente with id 
     app.updateRouteDescription = "Atualiza um cartão do cliente pelo id";
-    router.put("/:id", checkIfDateIsOlder(CartaoCliente), cartaoCliente.update); 
+    router.put("/:id", cartaoCliente.update); 
     // Delete a CartaoCliente with id 
     app.deleteRouteDescription = "Remove um cartão do cliente pelo id";
     router.delete("/:id", cartaoCliente.delete); 

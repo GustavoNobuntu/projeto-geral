@@ -1,8 +1,6 @@
-const db = require("../models/index.js");
-const Functions_system = db.functions_system;
 const fs = require('fs-extra');
 const path = require('path');
-
+const databaseFunctions = require('../app/config/database');
 /**
  * Registra todas as rotas dessa API no banco de dados.
  */
@@ -103,7 +101,6 @@ function readRoutes() {
               //Irá obter o nome do método da rota
               const methods = Object.keys(layer.route.methods);
               const _path = path + layer.route.path;
-              // console.log(`Path: ${_path}, Methods: ${methods}`);
               routes.push({ path: _path, method: methods });
             }
           });
@@ -118,7 +115,10 @@ function readRoutes() {
 
 async function saveRoutesOnDatabase(_description, _route, _classname) {
 
-  await Functions_system.findOneAndUpdate({ route: _route }, {name: _description, route: _route, classname: _classname}, {
+  const connection = await databaseFunctions.connectDataBase(process.env.DatabaseUri);
+  // const qewf = await connection.user.findOne({ UID: "20fe4c3a-1c20-405c-ba38-f04a5b3e7198" }).exec();
+  // console.log(qewf);
+  await connection.functionSystem.findOneAndUpdate({ route: _route }, {name: _description, route: _route, classname: _classname}, {
     new: true,
     upsert: true //SE não tiver o registro, ele irá criar
   });

@@ -43,7 +43,7 @@
             "forageinKey": "id",
             "lookup": true,
             "viewDetails": true,
-            "searchable": [
+            "searchableFields": [
                 "nome"
             ],
             "addNew": true,

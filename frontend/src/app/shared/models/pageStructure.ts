@@ -12,7 +12,7 @@ export interface IPageStructureConfig {
   route: string;
   localStorage: boolean;
   filter: boolean;
-  searchableFields: ISearchableField[];
+  searchableFields: string[];
   addNew: boolean;
   edit: boolean;
   columnsQuantity: number;

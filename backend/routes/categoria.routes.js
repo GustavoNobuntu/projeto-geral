@@ -1,6 +1,5 @@
 module.exports = app => {
     const categoria = require("../app/controllers/categoria.controller.js"); 
-    const checkIfDateIsOlder = require("../app/middlewares/checkIfDateIsOlder.middleware.js"); 
 
     const db = require("../models/index.js"); 
     const Categoria = db.categoria; 
@@ -14,7 +13,7 @@ module.exports = app => {
     // Retrieve a single Categoria with id 
     router.get("/:id", categoria.findOne); 
     // Update a Categoria with id 
-    router.put("/:id", checkIfDateIsOlder(Categoria), categoria.update); 
+    router.put("/:id", categoria.update); 
     // Delete a Categoria with id 
     router.delete("/:id", categoria.delete); 
     // Create a new Categoria 

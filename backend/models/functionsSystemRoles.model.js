@@ -1,7 +1,13 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-module.exports = mongoose => {
+module.exports = mongooseConnection => {
+
+// Verifica se o modelo já foi criado para a conexão específica (Toda vez que é feito a conexão nova ao banco de dados, é preciso setar os models, porém só pode fazer isso uma vez por conexão, se fizer mais de uma vez dá erro. Por isso é verificado se dentro dos models da conexão existe o model)
+  if (mongooseConnection.models.functionsSystemRoles) {
+    return mongooseConnection.models.functionsSystemRoles;
+  }
+
   var schema = mongoose.Schema(
     {
       Roles: { type: Schema.Types.ObjectId, ref: 'Roles' },
@@ -17,6 +23,6 @@ module.exports = mongoose => {
     return object;
   });
 
-  const FunctionsSystemRoles = mongoose.model("functionsSystemRoles", schema);
+  const FunctionsSystemRoles = mongooseConnection.model("functionsSystemRoles", schema);
   return FunctionsSystemRoles;
 };

@@ -5,6 +5,9 @@ const registerRoutes = require("./utils/registerRoutes.util");
 require('dotenv').config();
 const moment = require('moment-timezone');
 
+const tenantFunctions = require("./app/middlewares/tenant.middleware");
+const databaseFunctions = require("./app/config/database");
+
 var corsOptions = {
   origin: "*"
 };
@@ -15,7 +18,13 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 const mongoose = require('mongoose');
-mongoose.connect(process.env.DatabaseUri);
+
+// mongoose.connect(process.env.DatabaseUri);
+// Realiza a conexão com o banco de dados padrão
+databaseFunctions.connectDataBase(process.env.DatabaseUri)
+
+// Define para usar o middleware de mudança de tenant
+app.use(tenantFunctions.changeTenant);
 
 // simple route
 app.get("/", (req, res) => {
@@ -85,5 +94,5 @@ app.listen(PORT, () => {
   console.log(`Horário atual: ${currentTime}`);
   console.log(`Fuso horário: ${timezone} (UTC${currentTimeZone})`);
 
-  registerRoutes.saveFunctionsSystem();
+  // registerRoutes.saveFunctionsSystem();//TODO pera ai
 });
