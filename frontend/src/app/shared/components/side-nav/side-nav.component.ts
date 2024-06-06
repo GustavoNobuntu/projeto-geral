@@ -16,7 +16,9 @@ interface INavListOption {
   routeUrl: string,
   optionName: string,
   svgIcon: string,
-  optionNameTranslated: string
+  optionNameTranslated: string,
+  isSubmenu?: boolean,
+  subMenu?: INavListOption[]
 }
 
 @Component({

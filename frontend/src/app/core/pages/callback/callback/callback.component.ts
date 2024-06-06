@@ -4,6 +4,7 @@ import { AuthService } from 'app/core/auth/auth.service';
 import { User } from 'app/core/auth/user.model';
 import { UserService } from 'app/core/auth/user.service';
 import { environment } from 'environments/environment';
+import { TenantService } from 'app/core/tenant/tenant.service';
 import { take } from 'rxjs';
 
 enum CallbackPageState {
@@ -23,6 +24,7 @@ export class CallbackComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private userService: UserService,
+    private tenantService: TenantService,
   ) {
     this.pageState = CallbackPageState.Redirecting;
   }
@@ -48,6 +50,7 @@ export class CallbackComponent implements OnInit {
       //Verificar se usuário está registrado na aplicação
       this.userService.getByUID(this.authService.userUID).pipe(take(1)).subscribe({
         next: (returnedUser: User) => {
+          this.saveUserSessionStorage(returnedUser);
           this.registerNewSession(returnedUser.id);
         },
 
@@ -95,6 +98,14 @@ export class CallbackComponent implements OnInit {
         this.redirectToErrorPage();
       }
     })
+  }
+
+  saveUserSessionStorage(user: User) {
+    this.tenantService.getAllTenants(user.tenants).subscribe(tenant => {
+      user.tenants = tenant;
+      sessionStorage.setItem('user', JSON.stringify(user));
+      this.tenantService.setTenant(tenant[0]);
+    });
   }
 
 }
