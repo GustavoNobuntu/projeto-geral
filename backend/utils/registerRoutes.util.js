@@ -1,15 +1,22 @@
 const fs = require('fs-extra');
 const path = require('path');
-const databaseFunctions = require('../app/config/database');
+
 /**
  * Registra todas as rotas dessa API no banco de dados.
  */
-function saveFunctionsSystem() {
+async function saveRoutes(databaseConnection) {
   var routesData = readRoutes();
 
-  routesData.forEach(async (route) => {
-    await saveRoutesOnDatabase(getDescription(getPathName(route.path), route.method, route.path), route.method + "#" + route.path, getPathName(route.path));
-  });
+  for (let routeIndex = 0; routeIndex < routesData.length; routeIndex++) {
+      const _description = getDescription(getPathName(routesData[routeIndex].path), routesData[routeIndex].method, routesData[routeIndex].path);
+      const _route =  routesData[routeIndex].method + "#" + routesData[routeIndex].path;
+      const _classname = getPathName(routesData[routeIndex].path);
+
+      await databaseConnection.functions_system.findOneAndUpdate({ route: _route }, {name: _description, route: _route, classname: _classname}, {
+        new: true,
+        upsert: true //SE não tiver o registro, ele irá criar
+      });
+  }
 }
 
 /**
@@ -113,18 +120,6 @@ function readRoutes() {
   return routes;
 }
 
-async function saveRoutesOnDatabase(_description, _route, _classname) {
-
-  const connection = await databaseFunctions.connectDataBase(process.env.DatabaseUri);
-  // const qewf = await connection.user.findOne({ UID: "20fe4c3a-1c20-405c-ba38-f04a5b3e7198" }).exec();
-  // console.log(qewf);
-  await connection.functionSystem.findOneAndUpdate({ route: _route }, {name: _description, route: _route, classname: _classname}, {
-    new: true,
-    upsert: true //SE não tiver o registro, ele irá criar
-  });
-
-}
-
 /**
  * Obtem o nome dentro do url usado nas rotas.
  * @example "/api/opcional/:id" pegará o "opcional"
@@ -152,7 +147,7 @@ function getRouteDescription(filePath, descriptionVariableName){
 }
 
 const registerRoutes = {
-  saveFunctionsSystem
+  saveRoutes
 };
 
 module.exports = registerRoutes;

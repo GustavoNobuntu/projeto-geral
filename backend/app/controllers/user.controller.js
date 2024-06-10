@@ -45,7 +45,7 @@ exports.create = async (req, res) => {
   }
 
   // Create a User
-  const user = new User({
+  const user = req.databaseConnection.user({
     UID: req.body.UID ? req.body.UID : null,
     TenantUID: req.body.TenantUID ? req.body.TenantUID : null,
     username: req.body.username ? req.body.username : null,
@@ -56,14 +56,14 @@ exports.create = async (req, res) => {
     Roles: req.body.Roles ? req.body.Roles : null
   });
 
-  const usersCreatedCount = await User.countDocuments({});
+  const usersCreatedCount = await req.databaseConnection.user.countDocuments({});
   // console.log("Quantidade de usuários criados na aplicação: ",usersCreatedCount);
 
   if(usersCreatedCount == 0){
     user.isAdministrator = true;
   }
 
-  const haveUserWithSameUIDRegisted = await User.findOne({ UID: req.body.UID });
+  const haveUserWithSameUIDRegisted = await req.databaseConnection.user.findOne({ UID: req.body.UID });
 
   if(haveUserWithSameUIDRegisted != null){
     res.status(400).send({
@@ -90,8 +90,8 @@ exports.create = async (req, res) => {
 exports.findAll = (req, res) => {
   var condition = {};
 
-  let populate = getSchemaRefs(db.user.schema.obj);
-  let query = User.find();
+  let populate = getSchemaRefs(req.databaseConnection.user.schema.obj);
+  let query = req.databaseConnection.user.find();
   if (populate.length > 0) {
     query = query.populate(populate.join(" "));
   }
@@ -109,10 +109,10 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  let populate = getSchemaRefs(db.user.schema.obj);
+  let populate = getSchemaRefs(req.databaseConnection.user.schema.obj);
 
   // Se houver referências estrangeiras fazer o populate 
-  let query = User.findOne({ _id: id });
+  let query = req.databaseConnection.user.findOne({ _id: id });
   if (populate.length > 0) {
     query = query.populate(populate.join(" "));
   }
@@ -132,10 +132,10 @@ exports.findOne = (req, res) => {
 exports.findOneByUID = (req, res) => {
   const UID = req.params.uid;
 
-  let populate = getSchemaRefs(User(req.databaseConnection).schema.obj);
+  let populate = getSchemaRefs(req.databaseConnection.user.schema.obj);
 
   // Se houver referências estrangeiras fazer o populate 
-  let query = User(req.databaseConnection).findOne({ UID: UID });
+  let query = req.databaseConnection.user.findOne({ UID: UID });
   if (populate.length > 0) {
     query = query.populate(populate.join(" "));
   }
@@ -163,7 +163,7 @@ exports.update = (req, res) => {
 
   const id = req.params.id;
 
-  User.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+  req.databaseConnection.user.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
     .then(data => {
       if (!data) {
         res.status(404).send({
@@ -184,7 +184,7 @@ exports.delete = (req, res) => {
 
   const id = req.params.id;
 
-  User.findByIdAndDelete(id)
+  req.databaseConnection.user.findByIdAndDelete(id)
     .then(data => {
       if (!data) {
         res.status(404).send({
@@ -207,7 +207,7 @@ exports.delete = (req, res) => {
 // Exclui todos os registros da entidade User
 exports.deleteAll = (req, res) => {
 
-  User.deleteMany({})
+  req.databaseConnection.user.deleteMany({})
     .then(data => {
       res.send({
         message: `${data.deletedCount} ${data.deletedCount > 1 ? '' : 'User'}  foram excluídas!`
@@ -224,7 +224,7 @@ exports.deleteAll = (req, res) => {
 // Procura por entidade User onde o campo booleano isAdministrator seja true
 exports.findAllIsAdministrator = (req, res) => {
 
-  User.find({ isAdministrator: true })
+  req.databaseConnection.user.find({ isAdministrator: true })
     .then(data => {
       res.send(data);
     })
@@ -240,7 +240,7 @@ exports.findCustom = async (req, res) => {
   const filterValues = req.body.filterValues;
   const filterConditions = req.body.filterValues;
 
-  findDataByCustomQuery(filterValues, filterConditions, User).then(data => {
+  findDataByCustomQuery(filterValues, filterConditions, req.databaseConnection.user).then(data => {
     res.status(200).send(data);
   })
   .catch(error => {

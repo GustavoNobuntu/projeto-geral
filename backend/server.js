@@ -1,12 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const registerRoutes = require("./utils/registerRoutes.util");
+
 require('dotenv').config();
 const moment = require('moment-timezone');
 
 const tenantFunctions = require("./app/middlewares/tenant.middleware");
 const databaseFunctions = require("./app/config/database");
+const operationFunctions = require("./app/middlewares/operation.middleware");
 
 var corsOptions = {
   origin: "*"
@@ -17,19 +18,24 @@ app.use(cors(corsOptions));
 app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
-const mongoose = require('mongoose');
 
-// mongoose.connect(process.env.DatabaseUri);
 // Realiza a conexão com o banco de dados padrão
-databaseFunctions.connectDataBase(process.env.DatabaseUri)
+try {
+  databaseFunctions.connectDataBase(process.env.DatabaseUri)
+} catch (error) {
+  console.warn(error);
+  return;
+}
 
 // Define para usar o middleware de mudança de tenant
-app.use(tenantFunctions.changeTenant);
+// app.use([tenantFunctions.changeTenant, operationFunctions.registerOperation]);
+
+// app.use();
 
 // simple route
 app.get("/", (req, res) => {
   // console.log(req.headers);
-  res.json({ message: "Welcome to application." });
+  res.status(200).json({ message: "Welcome to application." });
 });
 
 //Declara CartaoConsumo rotas
@@ -81,6 +87,10 @@ require("./routes/user.routes")(app);
 
 require("./routes/session.routes")(app);
 
+require("./routes/pageStructure.routes")(app);
+
+require("./routes/tenant.routes")(app);
+
 // Obtém a hora atual e o fuso horário da máquina
 const now = moment();
 const timezone = moment.tz.guess();
@@ -93,6 +103,4 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
   console.log(`Horário atual: ${currentTime}`);
   console.log(`Fuso horário: ${timezone} (UTC${currentTimeZone})`);
-
-  // registerRoutes.saveFunctionsSystem();//TODO pera ai
 });

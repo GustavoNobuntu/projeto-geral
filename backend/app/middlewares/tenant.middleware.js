@@ -1,7 +1,7 @@
 const databaseFunctions = require("../config/database.js");
-// Middleware para trocar de banco de dados de acordo com o tenant
 const jwt = require("jsonwebtoken");
 
+// Middleware para trocar de banco de dados de acordo com o tenant
 async function userHasAccessToTenant(userUID, tenantId, databaseConnection) {
   try {
     const user = await databaseConnection.user.findOne({ UID: userUID }).populate("tenants").exec();
@@ -23,13 +23,19 @@ async function userHasAccessToTenant(userUID, tenantId, databaseConnection) {
 async function changeTenant(req, res, next) {
 
   const tenantId = req.header('X-Tenant-ID');
-  const user_authorization_code = req.header('Authorization');
-  const access_token = user_authorization_code.split(' ')[1]; // Obtém o token após "Bearer"
-  const decoded = jwt.decode(access_token);
 
   if (!tenantId) {
     return res.status(400).json({ error: 'Tenant ID é obrigatório' });
   }
+
+  const userAuthorizationCode = req.header('Authorization');
+
+  if (!userAuthorizationCode) {
+    return res.status(400).json({ error: 'Authorization é obrigatório' });
+  }
+
+  const access_token = userAuthorizationCode.split(' ')[1]; // Obtém o token após "Bearer"
+  const decoded = jwt.decode(access_token);
 
   try {
 

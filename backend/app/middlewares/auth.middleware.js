@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const axios = require("axios");
 const jwkToPem = require("jwk-to-pem");
+const databaseFunctions = require("../config/database");
 
 async function getJWKS(jwksUri) {
   try {
@@ -21,8 +22,14 @@ async function getJWKS(jwksUri) {
  */
 async function verifyAccess(req, res, next) {
 
+  var databaseConnection = await databaseFunctions.getDefaultConnection();
+
+  if(!databaseConnection){
+    return res.status(500).send({ message: "Erro no servidor" });
+  }
+
   //Verifica se é publica, se for só passa
-  if (await isPublicRoute(req.method, req.originalUrl, req.databaseConnection) == true) {
+  if (await isPublicRoute(req.method, req.originalUrl, databaseConnection) == true) {
     next();
     return;
   }
@@ -32,16 +39,15 @@ async function verifyAccess(req, res, next) {
 
   try {
     const access_token = authHeader.split(' ')[1]; // Obtém o token após "Bearer"
-
+    
     //Verifica se o token é valido, assim retorna o OID do usuário
     const userOID = await verifyAccessTokenIsValid(access_token, res);
-
     //Se não retornou o OID (não tem access_token)
     if (userOID == null) {
       res.status(401).send({ message: "Acesso não autorizado" });
     } else {
       //Se tem o OID verifica se tem permissao pra rota
-      if (await isAuthorizedOnUrl(userOID, req.method, req.originalUrl, req.databaseConnection) == true) {
+      if (await isAuthorizedOnUrl(userOID, req.method, req.originalUrl, databaseConnection) == true) {
         next();
       } else {
         res.status(401).send({ message: "Acesso não autorizado" });

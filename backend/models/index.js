@@ -64,11 +64,28 @@ async function connectionFactory(dbURI) {
 
   connection.tenant = require("./tenant.model.js")(connection);
 
+  connection.pageStructure = require("./pageStructure.model.js")(connection);
+
+  return connection;
+}
+
+async function connectionSecurityFactory(dbURI) {
+  const connection = await mongoose.createConnection(dbURI);
+
+  connection.user = require("./user.model.js")(connection);
+
+  connection.tenant = require("./tenant.model.js")(connection);
+
+  connection.operation = require("./operation.model.js")(connection);
+
+  connection.role = require("./role.model.js")(connection);
+
   return connection;
 }
 
 const connectionFunctions = {
   connectionFactory,
+  connectionSecurityFactory
 };
 
 module.exports = connectionFunctions;
