@@ -8,8 +8,9 @@ module.exports = app => {
 
   var router = require("express").Router();
   // Create a new tenant 
-  router.post("/", verifyAccess, tenant.create);
-
+  // router.post("/", verifyAccess, tenant.create);
+  router.post("/", verifyAccess, );
+  
   // router.get("/", tenant.findAll);
 
   // Retrieve a single tenant with id

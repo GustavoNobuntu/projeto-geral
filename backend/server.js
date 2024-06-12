@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+app.set('trust proxy', 1 /* number of proxies between user and server */);
 
 require('dotenv').config();
 const moment = require('moment-timezone');
@@ -14,6 +15,7 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
 // parse requests of content-type - application/json
 app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
@@ -27,6 +29,7 @@ try {
   return;
 }
 
+app.use(operationFunctions.registerOperation);
 // Define para usar o middleware de mudança de tenant
 // app.use([tenantFunctions.changeTenant, operationFunctions.registerOperation]);
 
