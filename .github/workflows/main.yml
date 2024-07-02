@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  release:
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install GitHub CLI
+        run: sudo apt-get install gh -y
+      - name: Get latest issue number
+        id: get_issue
+        run: |
+          latest_issue=$(gh issue list --limit 1 --json number --jq '.[0].number')
+          echo "::set-output name=ISSUE_NUMBER::$latest_issue"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Close issue
+        uses: peter-evans/close-issue@v1
+        with:
+          issue-number: ${{ steps.get_issue.outputs.ISSUE_NUMBER }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
