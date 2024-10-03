@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/ninth-glider-366922/novoprojeto/frontend', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/ninth-glider-366922/novoprojeto/frontend']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['run', 'deploy', 'novoprojetofrontend', '--image', 'gcr.io/ninth-glider-366922/novoprojeto/frontend', '--region', 'southamerica-east1', '--port', '8081']
